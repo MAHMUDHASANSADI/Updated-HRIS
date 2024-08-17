@@ -801,6 +801,7 @@ Route::group(['middleware' => ['verified']], function () {
         ]
     );
 
+
     Route::post('attendanceemployee/attendance', [AttendanceEmployeeController::class, 'attendance'])->name('attendanceemployee.attendance')->middleware(
         [
             'auth',

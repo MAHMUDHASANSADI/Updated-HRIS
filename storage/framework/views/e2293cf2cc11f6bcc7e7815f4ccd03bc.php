@@ -1,15 +1,15 @@
-@extends('layouts.admin')
-@section('page-title')
-    {{ __('Manage Bulk Attendance') }}
-@endsection
+<?php $__env->startSection('page-title'); ?>
+    <?php echo e(__('Manage Bulk Attendance')); ?>
 
-@section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-    <li class="breadcrumb-item">{{ __('Bulk Attendance') }}</li>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('breadcrumb'); ?>
+    <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>"><?php echo e(__('Home')); ?></a></li>
+    <li class="breadcrumb-item"><?php echo e(__('Bulk Attendance')); ?></li>
+<?php $__env->stopSection(); ?>
 
 
-@push('script-page')
+<?php $__env->startPush('script-page'); ?>
     <script>
         $('#present_all').click(function(event) {
             if (this.checked) {
@@ -58,11 +58,11 @@
         function getDepartment(bid) {
 
             $.ajax({
-                url: '{{ route('monthly.getdepartment') }}',
+                url: '<?php echo e(route('monthly.getdepartment')); ?>',
                 type: 'POST',
                 data: {
                     "branch_id": bid,
-                    "_token": "{{ csrf_token() }}",
+                    "_token": "<?php echo e(csrf_token()); ?>",
                 },
                 success: function(data) {
 
@@ -72,7 +72,7 @@
                                             </select>`;
                     $('.department_div').html(emp_selct);
 
-                    $('.department_id').append('<option value="0"> {{ __('All') }} </option>');
+                    $('.department_id').append('<option value="0"> <?php echo e(__('All')); ?> </option>');
                     $.each(data, function(key, value) {
                         $('.department_id').append('<option value="' + key + '">' + value +
                             '</option>');
@@ -84,21 +84,22 @@
             });
         }
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
 
-@section('action-button')
+<?php $__env->startSection('action-button'); ?>
     <!--  <a class="btn btn-sm btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-            aria-expanded="false" aria-controls="multiCollapseExample1" data-bs-toggle="tooltip" title="{{ __('Filter') }}">
+            aria-expanded="false" aria-controls="multiCollapseExample1" data-bs-toggle="tooltip" title="<?php echo e(__('Filter')); ?>">
             <i class="ti ti-filter"></i>
         </a> -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="col-sm-12">
         <div class="mt-2" id="multiCollapseExample1">
             <div class="card">
                 <div class="card-body">
-                    {{ Form::open(['route' => ['attendanceemployee.bulkattendance'], 'method' => 'get', 'id' => 'bulkattendance_filter']) }}
+                    <?php echo e(Form::open(['route' => ['attendanceemployee.bulkattendance'], 'method' => 'get', 'id' => 'bulkattendance_filter'])); ?>
+
                     <div class="row align-items-center justify-content-end">
                         <div class="col-xl-10">
                             <div class="row">
@@ -107,20 +108,26 @@
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                                     <div class="btn-box">
-                                        {{ Form::label('date', __('Date'), ['class' => 'form-label']) }}
-                                        {{ Form::text('date', isset($_GET['date']) ? $_GET['date'] : date('Y-m-d'), ['class' => 'month-btn form-control d_week ', 'autocomplete' => 'off']) }}
+                                        <?php echo e(Form::label('date', __('Date'), ['class' => 'form-label'])); ?>
+
+                                        <?php echo e(Form::text('date', isset($_GET['date']) ? $_GET['date'] : date('Y-m-d'), ['class' => 'month-btn form-control d_week ', 'autocomplete' => 'off'])); ?>
+
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                                     <div class="btn-box">
-                                        {{ Form::label('branch', __('branch'), ['class' => 'form-label']) }}
-                                        {{ Form::select('branch', $branch, isset($_GET['branch']) ? $_GET['branch'] : '', ['class' => 'form-control select branch_id', 'id' => 'branch_id']) }}
+                                        <?php echo e(Form::label('branch', __('branch'), ['class' => 'form-label'])); ?>
+
+                                        <?php echo e(Form::select('branch', $branch, isset($_GET['branch']) ? $_GET['branch'] : '', ['class' => 'form-control select branch_id', 'id' => 'branch_id'])); ?>
+
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                                    <!-- <div class="btn-box"> -->
-                                        {{ Form::label('department', __('department'), ['class' => 'form-label']) }}
-                                        {{ Form::select('department', $department, isset($_GET['department']) ? $_GET['department'] : '', ['class' => 'form-control select department_id', 'id' => 'department_id']) }}
+                                    <div class="btn-box">
+                                        <?php echo e(Form::label('department', __('department'), ['class' => 'form-label'])); ?>
+
+                                        <?php echo e(Form::select('department', $department, isset($_GET['department']) ? $_GET['department'] : '', ['class' => 'form-control select department_id', 'id' => 'department_id'])); ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +141,7 @@
                                         data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
-                                    <a href="{{ route('attendanceemployee.bulkattendance') }}"
+                                    <a href="<?php echo e(route('attendanceemployee.bulkattendance')); ?>"
                                         class="btn btn-sm btn-danger" data-bs-toggle="tooltip" title=""
                                         data-bs-original-title="Reset">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -144,7 +151,8 @@
                             </div>
                         </div>
                     </div>
-                    {{ Form::close() }}
+                    <?php echo e(Form::close()); ?>
+
                 </div>
             </div>
         </div>
@@ -153,72 +161,73 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header card-body table-border-style">
-                {{ Form::open(['route' => ['attendanceemployee.bulkattendance'], 'method' => 'post']) }}
+                <?php echo e(Form::open(['route' => ['attendanceemployee.bulkattendance'], 'method' => 'post'])); ?>
+
                 <div class="table-responsive">
                     <table class="table" id="">
                         <thead>
                             <tr>
-                                <th width="10%">{{ __('Employee Id') }}</th>
-                                <th>{{ __('Employee') }}</th>
-                                <th>{{ __('Branch') }}</th>
-                                <th>{{ __('Department') }}</th>
+                                <th width="10%"><?php echo e(__('Employee Id')); ?></th>
+                                <th><?php echo e(__('Employee')); ?></th>
+                                <th><?php echo e(__('Branch')); ?></th>
+                                <th><?php echo e(__('Department')); ?></th>
                                 <th>
 
                                     <div class="form-group my-auto">
                                         <div class="custom-control custom-checkbox">
                                             <input class="form-check-input" type="checkbox" name="present_all"
-                                                id="present_all" {{ old('remember') ? 'checked' : '' }}>
+                                                id="present_all" <?php echo e(old('remember') ? 'checked' : ''); ?>>
                                             <label class="custom-control-label" for="present_all">
-                                                {{ __('Attendance') }}</label>
+                                                <?php echo e(__('Attendance')); ?></label>
                                         </div>
                                     </div>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($employees as $employee)
-                                @php
+                            <?php $__currentLoopData = $employees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php
                                     $attendance = $employee->present_status($employee->id, isset($_GET['date']) ? $_GET['date'] : date('Y-m-d'));
-                                @endphp
+                                ?>
                                 <tr>
                                     <td class="Id">
-                                        <input type="hidden" value="{{ $employee->id }}" name="employee_id[]">
-                                        <a href="{{ route('employee.show', \Illuminate\Support\Facades\Crypt::encrypt($employee->id)) }}"
-                                            class="btn btn-outline-primary">{{ \Auth::user()->employeeIdFormat($employee->employee_id) }}</a>
+                                        <input type="hidden" value="<?php echo e($employee->id); ?>" name="employee_id[]">
+                                        <a href="<?php echo e(route('employee.show', \Illuminate\Support\Facades\Crypt::encrypt($employee->id))); ?>"
+                                            class="btn btn-outline-primary"><?php echo e(\Auth::user()->employeeIdFormat($employee->employee_id)); ?></a>
                                     </td>
-                                    <td>{{ $employee->name }}</td>
-                                    <td>{{ !empty($employee->branch) ? $employee->branch->name : '' }}</td>
-                                    <td>{{ !empty($employee->department) ? $employee->department->name : '' }}</td>
+                                    <td><?php echo e($employee->name); ?></td>
+                                    <td><?php echo e(!empty($employee->branch) ? $employee->branch->name : ''); ?></td>
+                                    <td><?php echo e(!empty($employee->department) ? $employee->department->name : ''); ?></td>
                                     <td>
                                         <div class="row">
                                             <div class="col-md-1">
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         <input class="form-check-input present" type="checkbox"
-                                                            name="present-{{ $employee->id }}"
-                                                            id="present{{ $employee->id }}"
-                                                            {{ !empty($attendance) && $attendance->status == 'Present' ? 'checked' : '' }}>
+                                                            name="present-<?php echo e($employee->id); ?>"
+                                                            id="present<?php echo e($employee->id); ?>"
+                                                            <?php echo e(!empty($attendance) && $attendance->status == 'Present' ? 'checked' : ''); ?>>
                                                         <label class="custom-control-label"
-                                                            for="present{{ $employee->id }}"></label>
+                                                            for="present<?php echo e($employee->id); ?>"></label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div
-                                                class="col-md-8 present_check_in {{ empty($attendance) ? 'd-none' : '' }} ">
+                                                class="col-md-8 present_check_in <?php echo e(empty($attendance) ? 'd-none' : ''); ?> ">
                                                 <div class="row">
-                                                    <label class="col-md-2 control-label">{{ __('In') }}</label>
+                                                    <label class="col-md-2 control-label"><?php echo e(__('In')); ?></label>
                                                     <div class="col-md-4">
                                                         <input type="time" class="form-control timepicker"
-                                                            name="in-{{ $employee->id }}"
-                                                            value="{{ !empty($attendance) && $attendance->clock_in != '00:00:00' ? $attendance->clock_in : \Utility::getValByName('company_start_time') }}">
+                                                            name="in-<?php echo e($employee->id); ?>"
+                                                            value="<?php echo e(!empty($attendance) && $attendance->clock_in != '00:00:00' ? $attendance->clock_in : \Utility::getValByName('company_start_time')); ?>">
                                                     </div>
 
                                                     <label for="inputValue"
-                                                        class="col-md-2 control-label">{{ __('Out') }}</label>
+                                                        class="col-md-2 control-label"><?php echo e(__('Out')); ?></label>
                                                     <div class="col-md-4">
                                                         <input type="time" class="form-control timepicker"
-                                                            name="out-{{ $employee->id }}"
-                                                            value="{{ !empty($attendance) && $attendance->clock_out != '00:00:00' ? $attendance->clock_out : \Utility::getValByName('company_end_time') }}">
+                                                            name="out-<?php echo e($employee->id); ?>"
+                                                            value="<?php echo e(!empty($attendance) && $attendance->clock_out != '00:00:00' ? $attendance->clock_out : \Utility::getValByName('company_end_time')); ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,25 +235,27 @@
                                     </td>
 
                                 </tr>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
                 </div>
                 <div class="attendance-btn float-end pt-4">
-                    <input type="hidden" value="{{ isset($_GET['date']) ? $_GET['date'] : date('Y-m-d') }}"
+                    <input type="hidden" value="<?php echo e(isset($_GET['date']) ? $_GET['date'] : date('Y-m-d')); ?>"
                         name="date">
-                    <input type="hidden" value="{{ isset($_GET['branch']) ? $_GET['branch'] : '' }}" name="branch">
-                    <input type="hidden" value="{{ isset($_GET['department']) ? $_GET['department'] : '' }}"
+                    <input type="hidden" value="<?php echo e(isset($_GET['branch']) ? $_GET['branch'] : ''); ?>" name="branch">
+                    <input type="hidden" value="<?php echo e(isset($_GET['department']) ? $_GET['department'] : ''); ?>"
                         name="department">
-                    {{ Form::submit(__('Update'), ['class' => 'btn btn-primary']) }}
+                    <?php echo e(Form::submit(__('Update'), ['class' => 'btn btn-primary'])); ?>
+
                 </div>
-                {{ Form::close() }}
+                <?php echo e(Form::close()); ?>
+
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@push('script-page')
+<?php $__env->startPush('script-page'); ?>
     <script>
         $(document).ready(function() {
             if ($('.daterangepicker').length > 0) {
@@ -257,4 +268,6 @@
             }
         });
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\HRM\resources\views/attendance/bulk.blade.php ENDPATH**/ ?>
