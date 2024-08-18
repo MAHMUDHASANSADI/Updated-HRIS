@@ -1,4 +1,3 @@
-<!-- 
 <?php $__env->startSection('page-title'); ?>
     <?php echo e(__('Manage Attendance List')); ?>
 
@@ -271,6 +270,6 @@
             </div>
         </div>
     </div>
-<?php $__env->stopSection(); ?> -->
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laragon\www\HRM\resources\views/attendance/index.blade.php ENDPATH**/ ?>

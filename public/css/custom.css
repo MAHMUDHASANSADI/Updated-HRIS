@@ -24,6 +24,10 @@
 
 /* Logo set */
 
+.font-color{
+    text-decoration: #011C4B;
+  }
+
 .setting-logo {
     justify-content: center;
     height: 40px;

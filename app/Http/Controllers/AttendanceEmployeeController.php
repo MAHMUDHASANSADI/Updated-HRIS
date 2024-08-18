@@ -1031,6 +1031,69 @@ class AttendanceEmployeeController extends Controller
             }
         }
     }
-    
 
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+    //new code for salary deduction
+
+    //new code for salary deduction
+
+    public function calculateWeeklySalaryDeduction($employee_id)
+    {
+        // Find the employee by ID
+        $employee = Employee::find($employee_id);
+    
+        // Check if the employee exists
+        if (!$employee) {
+            return [
+                'error' => 'Employee not found',
+            ]; // Return a 404 Not Found response
+        }
+        $startOfWeek = date("Y-m-d", strtotime('saturday this week'));
+        $endOfWeek = date('Y-m-d', strtotime($startOfWeek.' +5 days'));
+    
+        // Count late or early days within the current week
+        $lateOrEarlyCount = AttendanceEmployee::where('employee_id', $employee_id)
+            ->whereBetween('date', [$startOfWeek, $endOfWeek])
+            ->where(function ($query) {
+                $query->where('late', '!=', '00:00:00')
+                      ->orWhere('early_leaving', '!=', '00:00:00');
+            })
+            ->count();
+    
+        // Calculate salary deduction based on the count
+        $salaryDeduction = 0;
+        if ($lateOrEarlyCount >= 3) {
+            $salaryDeduction = 1; // Deduct 1 day salary
+        }
+    
+        // Update the employee's salary deduction
+        $employee->salary_deduction = $salaryDeduction;
+        $employee->save();
+    
+         return [
+            'employee_id' => $employee_id,
+            'late_or_early_count' => $lateOrEarlyCount,
+            'salary_deduction' => $salaryDeduction,
+        ];
+
+       
+    }
+    public function salaryDeduction()
+    {
+        return view('SalaryDeduction.salaryDeduction', [
+            'employees' => Employee::all(),
+            'deduction' => $this->calculateWeeklySalaryDeduction(request()->get('employee_id'))
+        ]);
+    }
+ 
 }

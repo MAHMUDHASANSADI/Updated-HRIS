@@ -816,6 +816,8 @@ Route::group(['middleware' => ['verified']], function () {
         ]
     );
 
+    Route::get('/salary-deduction',[AttendanceEmployeeController::class, 'salaryDeduction']);
+
     //import attendance
     Route::get('import/attendance/file', [AttendanceEmployeeController::class, 'importFile'])->name('attendance.file.import');
     Route::post('import/attendance', [AttendanceEmployeeController::class, 'import'])->name('attendance.import');
