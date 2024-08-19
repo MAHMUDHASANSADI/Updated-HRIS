@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                                    <div class="btn-box">
+                                    <!-- <div class="btn-box"> -->
                                         <?php echo e(Form::label('department', __('department'), ['class' => 'form-label'])); ?>
 
                                         <?php echo e(Form::select('department', $department, isset($_GET['department']) ? $_GET['department'] : '', ['class' => 'form-control select department_id', 'id' => 'department_id'])); ?>

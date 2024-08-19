@@ -251,6 +251,10 @@
                                                 href="{{ route('attendanceemployee.bulkattendance') }}">{{ __('Bulk Attendance') }}</a>
                                         </li>
                                     @endcan
+                                    <li class="dash-item">
+                                            <a class="dash-link"
+                                                href="{{ route('SalaryDeduction.salaryDeduction') }}">{{ __('Salary Deduction') }}</a>
+                                        </li>
                                 </ul>
                             </li>
                         @endcan

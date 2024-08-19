@@ -1047,7 +1047,7 @@ class AttendanceEmployeeController extends Controller
 
     //new code for salary deduction
 
-    public function calculateWeeklySalaryDeduction($employee_id)
+    public function calculateWeeklySalaryDeduction($employee_id, $from, $to)
     {
         // Find the employee by ID
         $employee = Employee::find($employee_id);
@@ -1058,12 +1058,10 @@ class AttendanceEmployeeController extends Controller
                 'error' => 'Employee not found',
             ]; // Return a 404 Not Found response
         }
-        $startOfWeek = date("Y-m-d", strtotime('saturday this week'));
-        $endOfWeek = date('Y-m-d', strtotime($startOfWeek.' +5 days'));
     
         // Count late or early days within the current week
         $lateOrEarlyCount = AttendanceEmployee::where('employee_id', $employee_id)
-            ->whereBetween('date', [$startOfWeek, $endOfWeek])
+            ->whereBetween('date', [$from, $to])
             ->where(function ($query) {
                 $query->where('late', '!=', '00:00:00')
                       ->orWhere('early_leaving', '!=', '00:00:00');
@@ -1090,10 +1088,11 @@ class AttendanceEmployeeController extends Controller
     }
     public function salaryDeduction()
     {
-        return view('SalaryDeduction.salaryDeduction', [
+        $data = [
             'employees' => Employee::all(),
-            'deduction' => $this->calculateWeeklySalaryDeduction(request()->get('employee_id'))
-        ]);
+            'deduction' => $this->calculateWeeklySalaryDeduction(request()->get('employee_id'), request()->get('from'), request()->get('to'))
+        ];
+        return view('SalaryDeduction.salaryDeduction', $data);
     }
  
 }

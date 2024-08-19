@@ -84,7 +84,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('assets/fonts/feather.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/fonts/fontawesome.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/fonts/material.css')); ?>">
-
+    <link rel="stylesheet" href="<?php echo e(asset('css/salarydeduction.css')); ?>">
     <!-- vendor css -->
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/customizer.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/custom.css')); ?>">

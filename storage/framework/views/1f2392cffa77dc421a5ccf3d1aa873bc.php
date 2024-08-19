@@ -246,6 +246,10 @@
                                                 href="<?php echo e(route('attendanceemployee.bulkattendance')); ?>"><?php echo e(__('Bulk Attendance')); ?></a>
                                         </li>
                                     <?php endif; ?>
+                                    <li class="dash-item">
+                                            <a class="dash-link"
+                                                href="<?php echo e(route('SalaryDeduction.salaryDeduction')); ?>"><?php echo e(__('Salary Deduction')); ?></a>
+                                        </li>
                                 </ul>
                             </li>
                         <?php endif; ?>
