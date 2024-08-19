@@ -22,10 +22,35 @@
     </form>
 
 
-    <div class="shadow p-3 mb-5 bg-white rounded " >
+    <div clasuction: s="shadow p-3 mb-5 bg-white rounded " >
     <h4 class="font-color">Salary Deduction for Employee </h1>
-    <p>Late or Early Count: {{ isset($deduction['late_or_early_count']) ? $deduction['late_or_early_count'] : '' }}</p>
-    <p>Salary Deduction:  {{ isset($deduction['salary_deduction']) ? $deduction['salary_deduction'] : '' }} day(s)</p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Late or Early Count</th>
+                <th>Salary Deduction</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(isset($deductions[0]))
+            @foreach($deductions as $deduction)
+            <tr>
+                <td>{{ $deduction['first_day'] }} to {{ $deduction['last_day'] }}</td>
+                <td>{{ $deduction['lateOrEarlyCount'] }}</td>
+                <td>{{ $deduction['salaryDeduction'] }}</td>
+            </tr>
+            @endforeach
+            @endif
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>{{ collect($deductions)->sum('lateOrEarlyCount') }}</td>
+                <td>{{ collect($deductions)->sum('salaryDeduction') }}</td>
+            </tr>
+        </tfoot>
+    </table>
     </div>
     
 @endsection

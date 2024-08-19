@@ -22,10 +22,35 @@
     </form>
 
 
-    <div class="shadow p-3 mb-5 bg-white rounded " >
+    <div clasuction: s="shadow p-3 mb-5 bg-white rounded " >
     <h4 class="font-color">Salary Deduction for Employee </h1>
-    <p>Late or Early Count: <?php echo e(isset($deduction['late_or_early_count']) ? $deduction['late_or_early_count'] : ''); ?></p>
-    <p>Salary Deduction:  <?php echo e(isset($deduction['salary_deduction']) ? $deduction['salary_deduction'] : ''); ?> day(s)</p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Late or Early Count</th>
+                <th>Salary Deduction</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if(isset($deductions[0])): ?>
+            <?php $__currentLoopData = $deductions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $deduction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <tr>
+                <td><?php echo e($deduction['first_day']); ?> to <?php echo e($deduction['last_day']); ?></td>
+                <td><?php echo e($deduction['lateOrEarlyCount']); ?></td>
+                <td><?php echo e($deduction['salaryDeduction']); ?></td>
+            </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endif; ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td><?php echo e(collect($deductions)->sum('lateOrEarlyCount')); ?></td>
+                <td><?php echo e(collect($deductions)->sum('salaryDeduction')); ?></td>
+            </tr>
+        </tfoot>
+    </table>
     </div>
     
 <?php $__env->stopSection(); ?>

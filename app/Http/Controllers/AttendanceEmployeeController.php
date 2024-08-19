@@ -1049,50 +1049,75 @@ class AttendanceEmployeeController extends Controller
 
     public function calculateWeeklySalaryDeduction($employee_id, $from, $to)
     {
-        // Find the employee by ID
-        $employee = Employee::find($employee_id);
-    
-        // Check if the employee exists
-        if (!$employee) {
-            return [
-                'error' => 'Employee not found',
-            ]; // Return a 404 Not Found response
-        }
-    
-        // Count late or early days within the current week
-        $lateOrEarlyCount = AttendanceEmployee::where('employee_id', $employee_id)
-            ->whereBetween('date', [$from, $to])
+        $deductions = [];
+        foreach($this->getWeeks($from, $to) as $week){
+            $lateOrEarlyCount = AttendanceEmployee::where('employee_id', $employee_id)
+            ->whereBetween('date', [$week['first_day'], $week['last_day']])
             ->where(function ($query) {
                 $query->where('late', '!=', '00:00:00')
-                      ->orWhere('early_leaving', '!=', '00:00:00');
+                    ->orWhere('early_leaving', '!=', '00:00:00');
             })
             ->count();
-    
-        // Calculate salary deduction based on the count
-        $salaryDeduction = 0;
-        if ($lateOrEarlyCount >= 3) {
-            $salaryDeduction = 1; // Deduct 1 day salary
+
+            array_push($deductions, [
+                'first_day' => $week['first_day'],
+                'last_day' => $week['last_day'],
+                'lateOrEarlyCount' => $lateOrEarlyCount,
+                'salaryDeduction' => $lateOrEarlyCount >= 3 ? floor($lateOrEarlyCount/3) : 0
+            ]);
         }
     
-        // Update the employee's salary deduction
-        $employee->salary_deduction = $salaryDeduction;
-        $employee->save();
-    
-         return [
-            'employee_id' => $employee_id,
-            'late_or_early_count' => $lateOrEarlyCount,
-            'salary_deduction' => $salaryDeduction,
-        ];
-
-       
+        return $deductions;
     }
     public function salaryDeduction()
     {
         $data = [
             'employees' => Employee::all(),
-            'deduction' => $this->calculateWeeklySalaryDeduction(request()->get('employee_id'), request()->get('from'), request()->get('to'))
+            'deductions' => $this->calculateWeeklySalaryDeduction(request()->get('employee_id'), request()->get('from'), request()->get('to'))
         ];
         return view('SalaryDeduction.salaryDeduction', $data);
+    }
+
+//anwar vai code from here
+
+    public function getWeeks($first_date, $last_date)
+    {
+        $weeks = [];
+        $temp_date = $first_date;
+        while(strtotime($temp_date) <= strtotime($last_date)){
+            $first_day = $temp_date;
+            $day_number = date('N', strtotime($first_day));
+
+            if(isset($weeks[0])){
+                if($day_number == 5){
+                    $first_day = date('Y-m-d', strtotime($first_day.' +1 days'));
+                    $last_day = date('Y-m-d', strtotime($first_day.' +5 days'));
+                }else{
+                    $last_day = date('Y-m-d', strtotime($first_day.' next thursday'));
+                }
+            }else{
+                if($day_number == 4){
+                    $last_day = $first_day;
+                }elseif($day_number == 5){
+                    $first_day = date('Y-m-d', strtotime($first_day.' +1 days'));
+                    $last_day = date('Y-m-d', strtotime($first_day.' +5 days'));
+                }else{
+                    $last_day = date('Y-m-d', strtotime($first_day.' next thursday'));
+                }
+            }
+
+            if(strtotime($last_day) > strtotime($last_date)){
+                $last_day = $last_date;
+            }
+            
+            $temp_date = date('Y-m-d', strtotime($last_day.' +1 days')); 
+            array_push($weeks, [
+                'first_day' => $first_day,
+                'last_day' => $last_day
+            ]);
+        }
+
+        return $weeks;
     }
  
 }
