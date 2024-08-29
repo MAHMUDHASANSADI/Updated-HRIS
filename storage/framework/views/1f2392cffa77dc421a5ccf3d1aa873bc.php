@@ -104,6 +104,14 @@
                     </ul>
                 </li>
             <?php endif; ?>
+
+            <!--organogram-->
+            <li class="dash-item">
+                    <a href="<?php echo e(route('organogram')); ?>" class="dash-link"><span class="dash-micon"><i
+                                class="ti ti-cloud"></i></span><span class="dash-mtext"><?php echo e(__('Organogram')); ?></span></a>
+                </li>
+
+
             <!--dashboard-->
 
             <!-- user-->

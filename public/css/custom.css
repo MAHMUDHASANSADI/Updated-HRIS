@@ -147,6 +147,12 @@
     color: #C59B08;
 }
 
+.buttongreen{
+    color: green;
+  }
+  .buttondanger{
+    color: rgba(255, 0, 0, 0.804);
+  }
 /* End star rating */
 
 /**job application show **/

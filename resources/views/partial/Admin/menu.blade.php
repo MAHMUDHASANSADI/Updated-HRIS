@@ -105,6 +105,14 @@
                     </ul>
                 </li>
             @endif
+
+            <!--organogram-->
+            <li class="dash-item">
+                    <a href="{{ route('organogram') }}" class="dash-link"><span class="dash-micon"><i
+                                class="ti ti-cloud"></i></span><span class="dash-mtext">{{ __('Organogram') }}</span></a>
+                </li>
+
+
             <!--dashboard-->
 
             <!-- user-->

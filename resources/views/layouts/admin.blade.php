@@ -84,9 +84,13 @@
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}">
     <link rel="stylesheet" href="{{ asset('css/salarydeduction.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/organogram.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/button.css') }}">
+
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset('assets/css/customizer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <style>
         :root {
