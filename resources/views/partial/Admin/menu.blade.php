@@ -124,7 +124,7 @@
                             : '' }} ">
                         <a href="#!" class="dash-link"><span class="dash-micon"><i
                                     class="ti ti-users"></i></span><span
-                                class="dash-mtext">{{ __('Staff') }}</span><span class="dash-arrow"><i
+                                class="dash-mtext">{{ __('Employee') }}</span><span class="dash-arrow"><i
                                     data-feather="chevron-right"></i></span></a>
                         <ul
                             class="dash-submenu {{ Request::route()->getName() == 'user.index' || Request::route()->getName() == 'users.create' || Request::route()->getName() == 'user.edit' || Request::route()->getName() == 'lastlogin' ? ' active' : '' }} ">
@@ -467,13 +467,13 @@
                                     href="{{ route('job-application.index') }}">{{ __('Job Application') }}</a>
                             </li>
                         @endcan
-                        @can('Manage Job Application')
+                        <!-- @can('Manage Job Application')
 
                             <li class="dash-item {{ request()->is('candidates-job-applications') ? 'active' : '' }}">
                                 <a class="dash-link"
                                     href="{{ route('job.application.candidate') }}">{{ __('Job Candidate') }}</a>
                             </li>
-                        @endcan
+                        @endcan -->
 
                         @can('Manage Job OnBoard')
                             <li class="dash-item">
