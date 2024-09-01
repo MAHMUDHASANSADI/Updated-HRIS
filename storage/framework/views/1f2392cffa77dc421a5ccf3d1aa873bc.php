@@ -79,7 +79,7 @@
 
                                         <li class="dash-item">
                                             <a class="dash-link"
-                                                href="<?php echo e(route('report.account.statement')); ?>"><?php echo e(__('Account Statement')); ?></a>
+                                                href="<?php echo e(route('report.account.statement')); ?>"><?php echo e(__('Financial Statement')); ?></a>
                                         </li>
 
 

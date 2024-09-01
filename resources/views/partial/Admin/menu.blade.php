@@ -80,7 +80,7 @@
 
                                         <li class="dash-item">
                                             <a class="dash-link"
-                                                href="{{ route('report.account.statement') }}">{{ __('Account Statement') }}</a>
+                                                href="{{ route('report.account.statement') }}">{{ __('Financial Statement') }}</a>
                                         </li>
 
 
