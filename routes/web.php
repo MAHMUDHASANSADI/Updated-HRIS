@@ -20,6 +20,7 @@ use App\Http\Controllers\AccountListController;
 use App\Http\Controllers\AiTemplateController;
 use App\Http\Controllers\TimeSheetController;
 use App\Http\Controllers\SetSalaryController;
+use App\Http\Controllers\OrganogramController;
 use App\Http\Controllers\EmailTemplateController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
@@ -817,6 +818,7 @@ Route::group(['middleware' => ['verified']], function () {
     );
 
     Route::get('/salary-deduction',[AttendanceEmployeeController::class, 'salaryDeduction'])->name('SalaryDeduction.salaryDeduction');
+    Route::get('/organogram',[OrganogramController::class, 'organogram'])->name('organogram');
 
     //import attendance
     Route::get('import/attendance/file', [AttendanceEmployeeController::class, 'importFile'])->name('attendance.file.import');

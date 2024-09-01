@@ -17,7 +17,7 @@ h1 {
     color: #007bff; /* A nice blue color */
 }
 
-select {
+.select-employee {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -25,17 +25,17 @@ select {
     margin-bottom: 20px;
 }
 
-.date{
+/* .day-count{
      
         padding: 10px;
         font-size: 16px;
-        border: 1px solid #ccc;
+        border: 1px solid #772020;
         border-radius: 4px;
         margin-bottom: 20px;
     
-}
+} */
 
-button{
+.button-calculate{
 
     
     padding: 10px;

@@ -9,14 +9,14 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('action-button'); ?>
-    <a href="<?php echo e(route('timesheet.export')); ?>" class="btn btn-sm btn-primary" data-bs-toggle="tooltip"
+    <a href="<?php echo e(route('timesheet.export')); ?>" class="buttongreen" data-bs-toggle="tooltip"
         data-bs-original-title="<?php echo e(__('Export')); ?>">
         <i class="ti ti-file-export"></i>
     </a>
 
     <a href="#" data-url="<?php echo e(route('timesheet.file.import')); ?>" data-ajax-popup="true"
         data-title="<?php echo e(__('Import Timesheet CSV file')); ?>" data-bs-toggle="tooltip" title=""
-        class="btn btn-sm btn-primary" data-bs-original-title="<?php echo e(__('Import')); ?>">
+        class="buttongreen" data-bs-original-title="<?php echo e(__('Import')); ?>">
         <i class="ti ti-file-import"></i>
     </a>
 
@@ -24,7 +24,7 @@
     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Create TimeSheet')): ?>
         <a href="#" data-url="<?php echo e(route('timesheet.create')); ?>" data-ajax-popup="true" data-size="md"
             data-title="<?php echo e(__('Create New Timesheet')); ?>" data-bs-toggle="tooltip" title=""
-            class="btn btn-sm btn-primary" data-bs-original-title="<?php echo e(__('Create')); ?>">
+            class="buttongreen" data-bs-original-title="<?php echo e(__('Create')); ?>">
             <i class="ti ti-plus"></i>
         </a>
     <?php endif; ?>
@@ -79,12 +79,12 @@
                             <div class="col-auto">
                                 <div class="row">
                                     <div class="col-auto mt-4">
-                                        <a href="#" class="btn btn-sm btn-primary"
+                                        <a href="#" class="buttongreen"
                                             onclick="document.getElementById('timesheet_filter').submit(); return false;"
                                             data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                             <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                         </a>
-                                        <a href="<?php echo e(route('timesheet.index')); ?>" class="btn btn-sm btn-danger"
+                                        <a href="<?php echo e(route('timesheet.index')); ?>" class=" buttondanger"
                                             data-bs-toggle="tooltip" title="" data-bs-original-title="Reset">
                                             <span class="btn-inner--icon"><i
                                                     class="ti ti-trash-off text-white-off "></i></span>
@@ -133,7 +133,7 @@
                                             <span>
                                                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Edit TimeSheet')): ?>
                                                     <div class="action-btn bg-info ms-2">
-                                                        <a href="#" class="mx-3 btn btn-sm  align-items-center"
+                                                        <a href="#" class="mx-3   align-items-center"
                                                             data-url="<?php echo e(route('timesheet.edit', $timeSheet->id)); ?>"
                                                             data-ajax-popup="true" data-size="md" data-bs-toggle="tooltip"
                                                             title="" data-title="<?php echo e(__('Edit Timesheet')); ?>"
@@ -144,7 +144,7 @@
                                                 <?php endif; ?>
 
                                                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Delete TimeSheet')): ?>
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn  ms-2">
                                                         <?php echo Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['timesheet.destroy', $timeSheet->id],
@@ -152,7 +152,7 @@
                                                         ]); ?>
 
                                                         <a href="#"
-                                                            class="mx-3 btn btn-sm  align-items-center bs-pass-para"
+                                                            class="mx-3 buttondanger  align-items-center bs-pass-para"
                                                             data-bs-toggle="tooltip" title=""
                                                             data-bs-original-title="Delete" aria-label="Delete"><i
                                                                 class="ti ti-trash text-white text-white"></i></a>

@@ -39,7 +39,7 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn  btn-light" data-bs-dismiss="modal">{{ __('Close') }}</button>
-    <input type="submit" value="{{ __('Create') }}" class="btn  btn-primary">
+    <input type="submit" value="{{ __('Create') }}" class="buttongreen">
 </div>
 {{ Form::close() }}
 

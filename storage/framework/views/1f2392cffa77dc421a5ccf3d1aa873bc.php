@@ -79,7 +79,7 @@
 
                                         <li class="dash-item">
                                             <a class="dash-link"
-                                                href="<?php echo e(route('report.account.statement')); ?>"><?php echo e(__('Account Statement')); ?></a>
+                                                href="<?php echo e(route('report.account.statement')); ?>"><?php echo e(__('Financial Statement')); ?></a>
                                         </li>
 
 
@@ -104,6 +104,14 @@
                     </ul>
                 </li>
             <?php endif; ?>
+
+            <!--organogram-->
+            <li class="dash-item">
+                    <a href="<?php echo e(route('organogram')); ?>" class="dash-link"><span class="dash-micon"><i
+                                class="ti ti-cloud"></i></span><span class="dash-mtext"><?php echo e(__('Organogram')); ?></span></a>
+                </li>
+
+
             <!--dashboard-->
 
             <!-- user-->
@@ -123,7 +131,7 @@
                             : ''); ?> ">
                         <a href="#!" class="dash-link"><span class="dash-micon"><i
                                     class="ti ti-users"></i></span><span
-                                class="dash-mtext"><?php echo e(__('Staff')); ?></span><span class="dash-arrow"><i
+                                class="dash-mtext"><?php echo e(__('Employee')); ?></span><span class="dash-arrow"><i
                                     data-feather="chevron-right"></i></span></a>
                         <ul
                             class="dash-submenu <?php echo e(Request::route()->getName() == 'user.index' || Request::route()->getName() == 'users.create' || Request::route()->getName() == 'user.edit' || Request::route()->getName() == 'lastlogin' ? ' active' : ''); ?> ">
@@ -462,13 +470,13 @@
                                     href="<?php echo e(route('job-application.index')); ?>"><?php echo e(__('Job Application')); ?></a>
                             </li>
                         <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Manage Job Application')): ?>
+                        <!-- <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Manage Job Application')): ?>
 
                             <li class="dash-item <?php echo e(request()->is('candidates-job-applications') ? 'active' : ''); ?>">
                                 <a class="dash-link"
                                     href="<?php echo e(route('job.application.candidate')); ?>"><?php echo e(__('Job Candidate')); ?></a>
                             </li>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Manage Job OnBoard')): ?>
                             <li class="dash-item">
