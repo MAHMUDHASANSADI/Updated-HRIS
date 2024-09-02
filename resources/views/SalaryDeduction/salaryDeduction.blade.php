@@ -61,6 +61,7 @@
             @endif
         </tbody>
         <tfoot>
+         
             <tr>
                 <td>Total</td>
                 <td>{{ collect($deductions)->sum('lateOrEarlyCount') }}</td>
