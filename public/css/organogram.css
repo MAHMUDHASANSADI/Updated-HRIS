@@ -101,3 +101,19 @@ body {
 .tree li a:hover+ul ul::before {
     border-color:  #94a0b4;
 }
+
+@media (max-width: 768px) {
+    .tree ul::before {
+        left: 25%;
+    }
+
+    .tree li::before,
+    .tree li::after {
+        width: 25%;
+    }
+
+    .tree li a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
