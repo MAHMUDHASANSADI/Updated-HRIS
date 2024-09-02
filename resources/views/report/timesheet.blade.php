@@ -139,7 +139,7 @@
                                 <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                             </a>
 
-                            <a href="{{ route('report.timesheet') }}" class="btn btn-sm btn-danger "
+                            <a href="{{ route('report.timesheet') }}" class="btn-sm buttondanger"
                                 data-bs-toggle="tooltip" title="{{ __('Reset') }}"
                                 data-original-title="{{ __('Reset') }}">
                                 <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>

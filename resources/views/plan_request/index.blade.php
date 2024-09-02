@@ -41,7 +41,7 @@
                                                 data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                     title="{{ __('Approve') }}"  class="btn btn-success mr-3">Approve
                                             </a>
-                                            <a href="#" class="btn btn-danger"   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            <a href="#" class=" buttondanger"   data-bs-toggle="tooltip" data-bs-placement="bottom"
                                             title="{{ __('Delete') }}"
                                                 data-confirm="{{ __('Are You Sure?') . '|' . __('This action can not be undone. Do you want to continue?') }}"
                                                 data-confirm-yes="document.getElementById('delete-form-{{ $prequest->id }}').submit();">
@@ -118,7 +118,7 @@
                                                 <i class="ti ti-checks"></i>
                                             </a>
                                             <a href="{{ route('response.request', [$prequest->id, 0]) }}"
-                                                class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="{{__("Cancel")}}">
+                                                class=" buttondanger btn-sm" data-bs-toggle="tooltip" data-bs-original-title="{{__("Cancel")}}">
                                                 <i class="ti ti-shield-x"></i>
                                             </a>
                                         </div>
