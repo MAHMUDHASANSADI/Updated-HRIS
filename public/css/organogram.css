@@ -102,6 +102,22 @@ body {
     border-color:  #94a0b4;
 }
 
+@media (max-width: 992px) {
+    .tree ul::before {
+        left: 40%;
+    }
+
+    .tree li::before,
+    .tree li::after {
+        width: 40%;
+    }
+
+    .tree li a {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+}
+
 @media (max-width: 768px) {
     .tree ul::before {
         left: 25%;
@@ -117,3 +133,37 @@ body {
         padding: 8px 15px;
     }
 }
+
+@media (max-width: 576px) {
+    .tree ul::before {
+        left: 30%;
+    }
+
+    .tree li::before,
+    .tree li::after {
+        width: 30%;
+    }
+
+    .tree li a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .tree ul::before {
+        left: 25%;
+    }
+
+    .tree li::before,
+    .tree li::after {
+        width: 25%;
+    }
+
+    .tree li a {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
+

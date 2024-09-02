@@ -44,7 +44,7 @@
                                         data-bs-original-title="{{ __('Edit') }}"><i
                                             class="ti ti-pencil  text-white"></i></a>
                                 </div>
-                                <div class="action-btn bg-danger ms-2">
+                                <div class="action-btn buttondanger ms-2">
                                     {!! Form::open([
                                         'method' => 'DELETE',
                                         'route' => ['job-stage.destroy', $stage->id],
@@ -84,7 +84,7 @@
                                         data-bs-original-title="{{ __('Edit') }}"><i
                                             class="ti ti-pencil  text-white"></i></a>
                                 </div>
-                                <div class="action-btn bg-danger ms-2">
+                                <div class="action-btn buttondanger ms-2">
                                     {!! Form::open([
                                         'method' => 'DELETE',
                                         'route' => ['job-stage.destroy', $stage->id],

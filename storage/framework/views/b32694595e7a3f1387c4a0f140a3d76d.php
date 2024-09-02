@@ -1,20 +1,20 @@
 <?php
-    $setting = App\Models\Utility::settings();
     $chatgpt = Utility::getValByName('enable_chatgpt');
 ?>
-<?php echo e(Form::open(['url' => 'leave', 'method' => 'post'])); ?>
+
+<?php echo e(Form::model($leave, ['route' => ['leave.update', $leave->id], 'method' => 'PUT'])); ?>
 
 <div class="modal-body">
 
     <?php if($chatgpt == 'on'): ?>
-        <div class="card-footer text-end">
-            <a href="#" class="btn btn-sm btn-primary" data-size="medium" data-ajax-popup-over="true"
-                data-url="<?php echo e(route('generate', ['leave'])); ?>" data-bs-toggle="tooltip" data-bs-placement="top"
-                title="<?php echo e(__('Generate')); ?>" data-title="<?php echo e(__('Generate Content With AI')); ?>">
-                <i class="fas fa-robot"></i><?php echo e(__(' Generate With AI')); ?>
+    <div class="card-footer text-end">
+        <a href="#" class="btn btn-sm btn-primary" data-size="medium" data-ajax-popup-over="true"
+            data-url="<?php echo e(route('generate', ['leave'])); ?>" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="<?php echo e(__('Generate')); ?>" data-title="<?php echo e(__('Generate Content With AI')); ?>">
+            <i class="fas fa-robot"></i><?php echo e(__(' Generate With AI')); ?>
 
-            </a>
-        </div>
+        </a>
+    </div>
     <?php endif; ?>
 
     <?php if(\Auth::user()->type != 'employee'): ?>
@@ -23,24 +23,22 @@
                 <div class="form-group">
                     <?php echo e(Form::label('employee_id', __('Employee'), ['class' => 'col-form-label'])); ?>
 
-                    <?php echo e(Form::select('employee_id', $employees, null, ['class' => 'form-control select2', 'id' => 'employee_id', 'placeholder' => __('Select Employee')])); ?>
+                    <?php echo e(Form::select('employee_id', $employees, null, ['class' => 'form-control select2', 'placeholder' => __('Select Employee')])); ?>
 
                 </div>
             </div>
         </div>
     <?php else: ?>
-        
         <?php echo Form::hidden('employee_id', !empty($employees) ? $employees->id : 0, ['id' => 'employee_id']); ?>
 
-        
     <?php endif; ?>
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
                 <?php echo e(Form::label('leave_type_id', __('Leave Type'), ['class' => 'col-form-label'])); ?>
 
+                
                 <select name="leave_type_id" id="leave_type_id" class="form-control select">
-                    <option value=""><?php echo e(__('Select Leave Type')); ?></option>
                     <?php $__currentLoopData = $leavetypes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $leave): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option value="<?php echo e($leave->id); ?>"><?php echo e($leave->title); ?> (<p class="float-right pr-5">
                                 <?php echo e($leave->days); ?></p>)</option>
@@ -54,7 +52,7 @@
             <div class="form-group">
                 <?php echo e(Form::label('start_date', __('Start Date'), ['class' => 'col-form-label'])); ?>
 
-                <?php echo e(Form::text('start_date', null, ['class' => 'form-control d_week current_date', 'autocomplete' => 'off', 'placeholder' => 'Select start date'])); ?>
+                <?php echo e(Form::text('start_date', null, ['class' => 'form-control d_week', 'autocomplete' => 'off'])); ?>
 
             </div>
         </div>
@@ -62,7 +60,7 @@
             <div class="form-group">
                 <?php echo e(Form::label('end_date', __('End Date'), ['class' => 'col-form-label'])); ?>
 
-                <?php echo e(Form::text('end_date', null, ['class' => 'form-control d_week current_date', 'autocomplete' => 'off', 'placeholder' => 'Select end date'])); ?>
+                <?php echo e(Form::text('end_date', null, ['class' => 'form-control d_week', 'autocomplete' => 'off'])); ?>
 
             </div>
         </div>
@@ -94,36 +92,36 @@
             </div>
         </div>
     </div>
-    <?php if(isset($setting['is_enabled']) && $setting['is_enabled'] == 'on'): ?>
-        <div class="form-group col-md-6">
-            <?php echo e(Form::label('synchronize_type', __('Synchroniz in Google Calendar ?'), ['class' => 'form-label'])); ?>
+    <?php if(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasRole', 'Company')): ?>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <?php echo e(Form::label('status', __('Status'), ['class' => 'col-form-label'])); ?>
 
-            <div class=" form-switch">
-                <input type="checkbox" class="form-check-input mt-2" name="synchronize_type" id="switch-shadow"
-                    value="google_calender">
-                <label class="form-check-label" for="switch-shadow"></label>
+                    <select name="status" id="" class="form-control select2">
+                        <option value=""><?php echo e(__('Select Status')); ?></option>
+                        <option value="pending" <?php if($leave->status == 'Pending'): ?> selected="" <?php endif; ?>><?php echo e(__('Pending')); ?>
+
+                        </option>
+                        <option value="approval" <?php if($leave->status == 'Approval'): ?> selected="" <?php endif; ?>><?php echo e(__('Approval')); ?>
+
+                        </option>
+                        <option value="reject" <?php if($leave->status == 'Reject'): ?> selected="" <?php endif; ?>><?php echo e(__('Reject')); ?>
+
+                        </option>
+                    </select>
+                </div>
             </div>
         </div>
     <?php endif; ?>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn  btn-light" data-bs-dismiss="modal"><?php echo e(__('Close')); ?></button>
-    <input type="submit" value="<?php echo e(__('Create')); ?>" class="buttongreen text-white ">
+    <input type="submit" value="<?php echo e(__('Update')); ?>" class="buttongreen text-white">
+
 </div>
 <?php echo e(Form::close()); ?>
 
-
-<script>
-    $(document).ready(function() {
-        var now = new Date();
-        var month = (now.getMonth() + 1);
-        var day = now.getDate();
-        if (month < 10) month = "0" + month;
-        if (day < 10) day = "0" + day;
-        var today = now.getFullYear() + '-' + month + '-' + day;
-        $('.current_date').val(today);
-    });
-</script>
 
 <script>
     $(document).ready(function() {
@@ -135,4 +133,4 @@
         }, 100);
     });
 </script>
-<?php /**PATH D:\laragon\www\HRM\resources\views/leave/create.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\laragon\www\HRM\resources\views/leave/edit.blade.php ENDPATH**/ ?>

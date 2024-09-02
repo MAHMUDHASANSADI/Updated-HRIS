@@ -126,7 +126,7 @@
                                                 @endcan
 
                                                 @can('Delete Holiday')
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         {!! Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['holiday.destroy', $holiday->id],

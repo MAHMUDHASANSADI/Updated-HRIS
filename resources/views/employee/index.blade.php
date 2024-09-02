@@ -92,7 +92,7 @@
                                                     @endcan
 
                                                     @can('Delete Employee')
-                                                        <div class="action-btn bg-danger ms-2">
+                                                        <div class="action-btn buttondanger ms-2">
                                                             {!! Form::open(['method' => 'DELETE', 'route' => ['employee.destroy', $employee->id], 'id' => 'delete-form-' . $employee->id]) !!}
                                                             <a href="#" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                                 data-bs-toggle="tooltip" title=""

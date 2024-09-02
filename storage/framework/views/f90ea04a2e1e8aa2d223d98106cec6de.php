@@ -10,19 +10,19 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('action-button'); ?>
-    <a href="<?php echo e(route('leave.export')); ?>" class="btn btn-sm btn-primary" data-bs-toggle="tooltip"
+    <a href="<?php echo e(route('leave.export')); ?>" class="buttongreen" data-bs-toggle="tooltip"
         data-bs-original-title="<?php echo e(__('Export')); ?>">
         <i class="ti ti-file-export"></i>
     </a>
 
-    <a href="<?php echo e(route('leave.calender')); ?>" class="btn btn-sm btn-primary" data-bs-toggle="tooltip"
+    <a href="<?php echo e(route('leave.calender')); ?>" class="buttongreen" data-bs-toggle="tooltip"
         data-bs-original-title="<?php echo e(__('Calendar View')); ?>">
         <i class="ti ti-calendar"></i>
     </a>
 
     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Create Leave')): ?>
         <a href="#" data-url="<?php echo e(route('leave.create')); ?>" data-ajax-popup="true" data-title="<?php echo e(__('Create New Leave')); ?>"
-            data-size="lg" data-bs-toggle="tooltip" title="" class="btn btn-sm btn-primary"
+            data-size="lg" data-bs-toggle="tooltip" title="" class="buttongreen"
             data-bs-original-title="<?php echo e(__('Create')); ?>">
             <i class="ti ti-plus"></i>
         </a>
@@ -74,7 +74,7 @@
                                         <?php elseif($leave->status == 'Approved'): ?>
                                             <div class="badge bg-success p-2 px-3 rounded"><?php echo e($leave->status); ?></div>
                                         <?php elseif($leave->status == "Reject"): ?>
-                                            <div class="badge bg-danger p-2 px-3 rounded"><?php echo e($leave->status); ?></div>
+                                            <div class="badge buttondanger p-2 px-3 rounded"><?php echo e($leave->status); ?></div>
                                         <?php endif; ?>
                                     </td>
 
@@ -107,7 +107,7 @@
                                                     <?php endif; ?>
                                                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Delete Leave')): ?>
                                                         <?php if(\Auth::user()->type != 'employee'): ?>
-                                                            <div class="action-btn bg-danger ms-2">
+                                                            <div class="action-btn buttondanger ms-2">
                                                                 <?php echo Form::open([
                                                                     'method' => 'DELETE',
                                                                     'route' => ['leave.destroy', $leave->id],

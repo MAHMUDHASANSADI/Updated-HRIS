@@ -1290,7 +1290,7 @@
                                                         </div>
                                                     @endcan
                                                     @can('Manage Company Settings')
-                                                        <div class="action-btn bg-danger ms-2">
+                                                        <div class="action-btn buttondanger ms-2">
                                                             {!! Form::open(['method' => 'DELETE', 'route' => ['destroy.ip', $ip->id], 'id' => 'delete-form-' . $ip->id]) !!}
                                                             <a href="#!"
                                                                 class="mx-3 btn btn-sm  align-items-center bs-pass-para"
@@ -2535,7 +2535,7 @@
                                                         </div>
                                                     @endcan
                                                     @can('Delete Webhook')
-                                                        <div class="action-btn bg-danger ms-2">
+                                                        <div class="action-btn buttondanger ms-2">
                                                             {!! Form::open([
                                                                 'method' => 'DELETE',
                                                                 'route' => ['destroy.webhook', $webhook->id],

@@ -70,7 +70,7 @@
             <div class="col-lg-3 col-6">
                 <div class="card ticket-card">
                     <div class="card-body">
-                        <div class="theme-avtar bg-danger">
+                        <div class="theme-avtar buttondanger">
                             <i class="ti ti-ticket"></i>
                         </div>
                         <p class="text-muted text-sm mt-4 mb-2"></p>
@@ -181,7 +181,7 @@
                                             <div class="status_badge text-capitalize badge bg-warning p-2 px-3 rounded">
                                                 {{ __('High') }}</div>
                                         @elseif($ticket->priority == 'critical')
-                                            <div class="status_badge text-capitalize badge bg-danger p-2 px-3 rounded">
+                                            <div class="status_badge text-capitalize badge buttondanger p-2 px-3 rounded">
                                                 {{ __('Critical') }}</div>
                                         @endif
                                     </td>
@@ -192,7 +192,7 @@
                                             <div class="status_badge text-capitalize badge bg-success p-2 px-3 rounded">
                                                 {{ __('Open') }}</div>
                                         @elseif($ticket->status == 'close')
-                                            <div class="status_badge text-capitalize badge bg-danger p-2 px-3 rounded">
+                                            <div class="status_badge text-capitalize badge buttondanger p-2 px-3 rounded">
                                                 {{ __('Close') }}</div>
                                         @elseif($ticket->status == 'onhold')
                                             <div class="status_badge text-capitalize badge bg-warning p-2 px-3 rounded">
@@ -219,7 +219,7 @@
                                             </div>
                                             @if (\Auth::user()->type == 'company' || $ticket->ticket_created == \Auth::user()->id)
                                                 @can('Delete Ticket')
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         {!! Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['ticket.destroy', $ticket->id],

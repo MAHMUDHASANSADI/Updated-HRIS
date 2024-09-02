@@ -156,7 +156,7 @@
                                 return '<div class="badge bg-success p-2 px-3 rounded"><a href="#" class="text-white">' +
                                     data + '</a></div>';
                             else
-                                return '<div class="badge bg-danger p-2 px-3 rounded"><a href="#" class="text-white">' +
+                                return '<div class="badge buttondanger p-2 px-3 rounded"><a href="#" class="text-white">' +
                                     data + '</a></div>';
                         }
 
@@ -227,7 +227,7 @@
                             console.log(data);
                             $.each(data, function(indexInArray, valueOfElement) {
                                 var status =
-                                    '<div class="badge bg-danger p-2 px-3 rounded"><a href="#" class="text-white">' +
+                                    '<div class="badge buttondanger p-2 px-3 rounded"><a href="#" class="text-white">' +
                                     valueOfElement[6] + '</a></div>';
                                 if (valueOfElement[6] == 'Paid') {
                                     var status =

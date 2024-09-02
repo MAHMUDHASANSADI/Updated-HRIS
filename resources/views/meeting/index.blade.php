@@ -64,7 +64,7 @@
                                             @endcan
 
                                             @can('Delete Meeting')
-                                                <div class="action-btn bg-danger ms-2">
+                                                <div class="action-btn buttondanger ms-2">
                                                     {!! Form::open([
                                                         'method' => 'DELETE',
                                                         'route' => ['meeting.destroy', $meeting->id],

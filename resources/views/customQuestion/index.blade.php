@@ -51,7 +51,7 @@
                                             class="badge bg-success p-2 px-3 rounded">{{ \App\models\CustomQuestion::$is_required[$question->is_required] }}</span>
                                     @else
                                         <span
-                                            class="badge bg-danger p-2 px-3 rounded">{{ \App\models\CustomQuestion::$is_required[$question->is_required] }}</span>
+                                            class="badge buttondanger p-2 px-3 rounded">{{ \App\models\CustomQuestion::$is_required[$question->is_required] }}</span>
                                     @endif
                                 </td>
                                 <td class="Action">
@@ -69,7 +69,7 @@
                                         @endcan
 
                                         @can('Delete Custom Question')
-                                            <div class="action-btn bg-danger ms-2">
+                                            <div class="action-btn buttondanger ms-2">
                                                 {!! Form::open(['method' => 'DELETE', 'route' => ['custom-question.destroy', $question->id], 'id' => 'delete-form-' . $question->id]) !!}
                                                 <a href="#" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                     data-bs-toggle="tooltip" title="" data-bs-original-title="Delete"

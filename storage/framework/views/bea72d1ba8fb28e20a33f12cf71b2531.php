@@ -32,6 +32,6 @@
 </div>
 <div class="modal-footer">
     <input type="button" value="Cancel" class="btn btn-light" data-bs-dismiss="modal">
-    <input type="submit" value="<?php echo e(__('Edit')); ?>" class="btn btn-primary">
+    <input type="submit" value="<?php echo e(__('Edit')); ?>" class="buttongreen text-white">
 </div>
 <?php echo e(Form::close()); ?><?php /**PATH D:\laragon\www\HRM\resources\views/attendance/edit.blade.php ENDPATH**/ ?>

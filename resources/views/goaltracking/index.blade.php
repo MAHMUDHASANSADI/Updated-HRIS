@@ -89,7 +89,7 @@
                                                 @endcan
 
                                                 @can('Delete Goal Tracking')
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         {!! Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['goaltracking.destroy', $goalTracking->id],

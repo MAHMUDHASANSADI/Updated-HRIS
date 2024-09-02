@@ -140,7 +140,7 @@
                                             class="badge bg-success p-2 px-3 rounded status-badge">{{ App\Models\Job::$status[$job->status] }}</span>
                                     @else
                                         <span
-                                            class="badge bg-danger p-2 px-3 rounded status-badge">{{ App\Models\Job::$status[$job->status] }}</span>
+                                            class="badge buttondanger p-2 px-3 rounded status-badge">{{ App\Models\Job::$status[$job->status] }}</span>
                                     @endif
                                 </td>
                                 <td>{{ \Auth::user()->dateFormat($job->created_at) }}</td>
@@ -172,7 +172,7 @@
                                         @endcan
 
                                         @can('Delete Job')
-                                            <div class="action-btn bg-danger ms-2">
+                                            <div class="action-btn buttondanger ms-2">
                                                 {!! Form::open(['method' => 'DELETE', 'route' => ['job.destroy', $job->id], 'id' => 'delete-form-' . $job->id]) !!}
                                                 <a href="#!" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                     data-bs-toggle="tooltip" data-bs-placement="bottom"

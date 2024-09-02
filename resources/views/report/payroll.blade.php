@@ -349,7 +349,7 @@
                                     <td>{{ $payslip->salary_month }}</td>
                                     <td>
                                         @if ($payslip->status == 0)
-                                            <div class="badge bg-danger p-2 px-3 rounded"><a href="#"
+                                            <div class="badge buttondanger p-2 px-3 rounded"><a href="#"
                                                     class="text-white">{{ __('UnPaid') }}</a></div>
                                         @else
                                             <div class="badge bg-success p-2 px-3 rounded"><a href="#"

@@ -383,7 +383,7 @@
                                             @if ($status == 'P')
                                                 <i class="badge bg-success p-2 rounded">{{ __('P') }}</i>
                                             @elseif($status == 'A')
-                                                <i class="badge bg-danger p-2 rounded">{{ __('A') }}</i>
+                                                <i class="badge buttondanger p-2 rounded">{{ __('A') }}</i>
                                             @endif
                                         </td>
                                     @endforeach
@@ -419,7 +419,7 @@
                                     @if ($status == 'P')
                                         <span class="badge bg-success p-2 rounded">{{ __('Present') }}</span>
                                     @elseif($status == 'A')
-                                        <span class="badge bg-danger p-2 rounded">{{ __('Absent') }}</span>
+                                        <span class="badge buttondanger p-2 rounded">{{ __('Absent') }}</span>
                                     @endif
                                 </li>
                             @endif

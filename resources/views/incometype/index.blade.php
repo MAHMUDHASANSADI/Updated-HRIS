@@ -55,7 +55,7 @@
                                         @endcan
 
                                         @can('Delete Income Type')
-                                            <div class="action-btn bg-danger ms-2">
+                                            <div class="action-btn buttondanger ms-2">
                                                 {!! Form::open(['method' => 'DELETE', 'route' => ['incometype.destroy', $incometype->id], 'id' => 'delete-form-' . $incometype->id]) !!}
                                                 <a href="#" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                     data-bs-toggle="tooltip" title="" data-bs-original-title="Delete"

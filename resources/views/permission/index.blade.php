@@ -108,7 +108,7 @@
                                                                         ]) !!}
                                                                         {!! Form::close() !!} --}}
 
-                                                                        <div class="action-btn bg-danger ms-2">
+                                                                        <div class="action-btn buttondanger ms-2">
                                                                             {!! Form::open([
                                                                                 'method' => 'DELETE',
                                                                                 'route' => ['permissions.destroy', $permission->id],

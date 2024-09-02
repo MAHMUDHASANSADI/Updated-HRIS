@@ -81,7 +81,7 @@
                                 <h3 class="text-danger">{{ $cnt_contract['last_30days'] }}</h3>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-handshake bg-danger text-white"></i>
+                                <i class="fas fa-handshake buttondanger text-white"></i>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                                         class="status_badge badge bg-primary  p-2 px-3 rounded">{{ __('Accept') }}</span>
                                                 @elseif($contract->status == 'decline')
                                                     <span
-                                                        class="status_badge badge bg-danger p-2 px-3 rounded">{{ __('Decline') }}</span>
+                                                        class="status_badge badge buttondanger p-2 px-3 rounded">{{ __('Decline') }}</span>
                                                 @elseif($contract->status == 'pending')
                                                     <span
                                                         class="status_badge badge bg-warning p-2 px-3 rounded">{{ __('Pending') }}</span>
@@ -176,7 +176,7 @@
                                                     @endcan
 
                                                     @can('Delete Contract')
-                                                        <div class="action-btn bg-danger ms-2">
+                                                        <div class="action-btn buttondanger ms-2">
                                                             {!! Form::open(['method' => 'DELETE', 'route' => ['contract.destroy', $contract->id]]) !!}
                                                             <a href="#!"
                                                                 class="mx-3 btn btn-sm d-inline-flex align-items-center bs-pass-para"

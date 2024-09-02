@@ -154,7 +154,7 @@
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
 
-                                    <a href="{{ route('attendanceemployee.index') }}" class="btn btn-sm btn-danger "
+                                    <a href="{{ route('attendanceemployee.index') }}" class=" btn-sm buttondanger "
                                         data-bs-toggle="tooltip" title="{{ __('Reset') }}"
                                         data-original-title="{{ __('Reset') }}">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -235,7 +235,7 @@
                                                 @endcan
 
                                                 @can('Delete Attendance')
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         {!! Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['attendanceemployee.destroy', $attendance->id],

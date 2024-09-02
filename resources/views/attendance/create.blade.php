@@ -21,7 +21,7 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn dark btn-outline" data-bs-dismiss="modal">{{__('Cancel')}}</button>
-    {{Form::submit(__('Create'),array('class'=>'btn btn-primary'))}}
+    {{Form::submit(__('Create'),array('class'=>'buttongreen text-white'))}}
 </div>
 {{Form::close()}} --}}
 
@@ -48,6 +48,6 @@
 </div>
 <div class="modal-footer pr-0">
     <button type="button" class="btn dark btn-outline" data-dismiss="modal">{{ __('Cancel') }}</button>
-    {{ Form::submit(__('Create'), ['class' => 'btn btn-primary']) }}
+    {{ Form::submit(__('Create'), ['class' => 'buttongreen text-white']) }}
 </div>
 {{ Form::close() }}
