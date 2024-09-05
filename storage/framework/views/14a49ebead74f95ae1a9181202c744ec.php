@@ -113,7 +113,7 @@
                                         data-original-title="<?php echo e(__('apply')); ?>">
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
-                                    <a href="<?php echo e(route('report.monthly.attendance')); ?>" class="btn btn-sm btn-danger "
+                                    <a href="<?php echo e(route('report.monthly.attendance')); ?>" class="btn-sm buttondanger "
                                         data-bs-toggle="tooltip" title="<?php echo e(__('Reset')); ?>"
                                         data-original-title="<?php echo e(__('Reset')); ?>">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -327,7 +327,7 @@
                                             <?php if($status == 'P'): ?>
                                                 <i class="badge bg-success p-2 rounded"><?php echo e(__('P')); ?></i>
                                             <?php elseif($status == 'A'): ?>
-                                                <i class="badge bg-danger p-2 rounded"><?php echo e(__('A')); ?></i>
+                                                <i class="badge buttondanger p-2 rounded"><?php echo e(__('A')); ?></i>
                                             <?php endif; ?>
                                         </td>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -363,7 +363,7 @@
                                     <?php if($status == 'P'): ?>
                                         <span class="badge bg-success p-2 rounded"><?php echo e(__('Present')); ?></span>
                                     <?php elseif($status == 'A'): ?>
-                                        <span class="badge bg-danger p-2 rounded"><?php echo e(__('Absent')); ?></span>
+                                        <span class="badge buttondanger p-2 rounded"><?php echo e(__('Absent')); ?></span>
                                     <?php endif; ?>
                                 </li>
                             <?php endif; ?>

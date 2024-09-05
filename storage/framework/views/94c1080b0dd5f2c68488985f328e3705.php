@@ -193,7 +193,7 @@
                                 <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                             </a>
 
-                            <a href="<?php echo e(route('report.leave')); ?>" class="btn btn-sm btn-danger " data-bs-toggle="tooltip"
+                            <a href="<?php echo e(route('report.leave')); ?>" class="btn-sm buttondanger " data-bs-toggle="tooltip"
                                 title="<?php echo e(__('Reset')); ?>" data-original-title="<?php echo e(__('Reset')); ?>">
                                 <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                             </a>
@@ -396,7 +396,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="btn btn-sm btn-danger rounded"><?php echo e($leave['reject']); ?>
+                                        <div class="btn-sm btn btn-danger rounded"><?php echo e($leave['reject']); ?>
 
                                             <a href="#" class="text-white"
                                                 data-url="<?php echo e(route('report.employee.leave', [$leave['id'], 'Reject', isset($_GET['type']) ? $_GET['type'] : 'no', isset($_GET['month']) ? $_GET['month'] : date('Y-m'), isset($_GET['year']) ? $_GET['year'] : date('Y')])); ?>"

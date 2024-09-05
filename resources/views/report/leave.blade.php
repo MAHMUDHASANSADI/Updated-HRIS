@@ -385,7 +385,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="btn-sm buttondanger rounded">{{ $leave['reject'] }}
+                                        <div class="btn-sm btn btn-danger rounded">{{ $leave['reject'] }}
                                             <a href="#" class="text-white"
                                                 data-url="{{ route('report.employee.leave', [$leave['id'], 'Reject', isset($_GET['type']) ? $_GET['type'] : 'no', isset($_GET['month']) ? $_GET['month'] : date('Y-m'), isset($_GET['year']) ? $_GET['year'] : date('Y')]) }}"
                                                 class="table-action table-action-delete" data-size="lg"
