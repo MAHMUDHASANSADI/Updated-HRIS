@@ -133,7 +133,7 @@
                             @else
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['plans.destroy', $plan->id], 'id' => 'delete-form-' . $plan->id]) !!}
                                 <a href="#!"
-                                    class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                    class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ __('Delete') }}">
                                     <i class="ti ti-trash"></i></a>
                                 {!! Form::close() !!}
@@ -265,7 +265,7 @@
                                         </a>
                                     @else
                                         <a href="{{ route('request.cancel', \Auth::user()->id) }}"
-                                            class="btn btn-danger btn-icon btn-sm"
+                                            class="buttondanger btn-icon btn-sm"
                                             data-title="{{ __('Cancel Request') }}" data-bs-toggle="tooltip"
                                             data-bs-placement="top"  data-bs-original-title="{{ __('Cancel Request') }}" title="{{ __('Cancel Request') }}">
                                             <span class="btn-inner--icon"><i class="ti ti-shield-x"></i></span>

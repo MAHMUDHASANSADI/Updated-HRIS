@@ -144,7 +144,7 @@
                                 <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                             </a>
 
-                            <a href="<?php echo e(route('report.timesheet')); ?>" class="btn btn-sm btn-danger "
+                            <a href="<?php echo e(route('report.timesheet')); ?>" class="btn-sm buttondanger"
                                 data-bs-toggle="tooltip" title="<?php echo e(__('Reset')); ?>"
                                 data-original-title="<?php echo e(__('Reset')); ?>">
                                 <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>

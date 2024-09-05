@@ -273,7 +273,7 @@
                                 @if (\Auth::user()->type != 'Employee')
                                     if (valueOfElement[7] != 0) {
                                         var deleted = '<a href="#"  data-url="' + url +
-                                            '" class="payslip_delete view-btn btn btn-danger ms-1 btn-sm"  >' +
+                                            '" class="payslip_delete view-btn  buttondanger ms-1 btn-sm"  >' +
                                             '{{ __('Delete') }}' + '</a>';
                                     } else {
                                         var deleted = '';
@@ -282,7 +282,7 @@
 
                                 @if (\Auth::user()->type == 'company' || \Auth::user()->type == 'hr')
                                     var deleted = '<a href="#"  data-url="' + url +
-                                        '" class="payslip_delete view-btn btn btn-danger ms-1 btn-sm"  >' +
+                                        '" class="payslip_delete view-btn buttondanger ms-1 btn-sm"  >' +
                                         '{{ __('Delete') }}' + '</a>';
                                 @else
                                     var deleted = '';

@@ -770,7 +770,7 @@
 
             var del = document.createElement('a');
             del.setAttribute('href', response.delete);
-            del.setAttribute('class', "action-btn btn-danger mx-1 mt-1 btn btn-sm d-inline-flex align-items-center");
+            del.setAttribute('class', "action-btn buttondanger mx-1 mt-1  btn-sm d-inline-flex align-items-center");
             del.setAttribute('data-toggle', "tooltip");
             del.setAttribute('data-original-title', "{{ __('Delete') }}");
             del.innerHTML = "<i class='ti ti-trash'></i>";
