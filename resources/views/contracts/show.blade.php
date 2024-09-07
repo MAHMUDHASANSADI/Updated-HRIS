@@ -316,7 +316,7 @@
                                                             <div class="col-auto actions">
                                                                 @can('Delete Attachment')
                                                                     @if (\Auth::user()->id == $file->user_id || \Auth::user()->type == 'company' || \Auth::user()->type == 'hr')
-                                                                        <div class="action-btn bg-danger ms-2">
+                                                                        <div class="action-btn buttondanger ms-2">
 
                                                                             <form action=""></form>
                                                                             {!! Form::open(['method' => 'GET', 'route' => ['contracts.file.delete', [$contract->id, $file->id]]]) !!}
@@ -446,7 +446,7 @@
 
                                                                     @can('Delete Comment')
                                                                         @if (\Auth::user()->id == $comment->user_id || \Auth::user()->type == 'company' || \Auth::user()->type == 'hr')
-                                                                            <div class="p-0 w-auto action-btn bg-danger">
+                                                                            <div class="p-0 w-auto action-btn buttondanger">
                                                                                 <form action=""></form>
                                                                                 {!! Form::open(['method' => 'GET', 'route' => ['comment.destroy', $comment->id]]) !!}
                                                                                 <a href="#!"
@@ -598,7 +598,7 @@
                                                                     </div>
                                                                     @can('Delete Note')
                                                                         @if (\Auth::user()->id == $note->user_id || \Auth::user()->type == 'company' || \Auth::user()->type == 'hr')
-                                                                            <div class="p-0 w-auto action-btn bg-danger">
+                                                                            <div class="p-0 w-auto action-btn buttondanger">
                                                                                 {!! Form::open(['method' => 'GET', 'route' => ['contracts.note.destroy', $note->id]]) !!}
                                                                                 <a href="#!"
                                                                                     class=" btn btn-sm d-inline-flex align-items-center bs-pass-para "
@@ -676,7 +676,7 @@
                             "                            <small class='d-block'>" + data.current_time +
                             "</small>" +
                             "                        </div>" +
-                            "                        <div class='action-btn bg-danger me-4'><div class='col-auto'><a href='#' class='mx-3 btn btn-sm  align-items-center delete-comment' data-url='" +
+                            "                        <div class='action-btn buttondanger me-4'><div class='col-auto'><a href='#' class='mx-3 btn btn-sm  align-items-center delete-comment' data-url='" +
                             data.deleteUrl +
                             "'><i class='ti ti-trash text-white'></i></a></div></div>" +
                             "                    </div>" +
@@ -770,7 +770,7 @@
 
             var del = document.createElement('a');
             del.setAttribute('href', response.delete);
-            del.setAttribute('class', "action-btn btn-danger mx-1 mt-1 btn btn-sm d-inline-flex align-items-center");
+            del.setAttribute('class', "action-btn buttondanger mx-1 mt-1  btn-sm d-inline-flex align-items-center");
             del.setAttribute('data-toggle', "tooltip");
             del.setAttribute('data-original-title', "{{ __('Delete') }}");
             del.innerHTML = "<i class='ti ti-trash'></i>";

@@ -74,10 +74,10 @@
                             @if (!empty($employeeAttendance) && $employeeAttendance->clock_out == '00:00:00')
                                 {{ Form::model($employeeAttendance, ['route' => ['attendanceemployee.update', $employeeAttendance->id], 'method' => 'PUT']) }}
                                 <button type="submit" value="1" name="out" id="clock_out"
-                                    class="btn btn-danger">{{ __('CLOCK OUT') }}</button>
+                                    class="buttondanger">{{ __('CLOCK OUT') }}</button>
                             @else
                                 <button type="submit" value="1" name="out" id="clock_out"
-                                    class="btn btn-danger disabled" disabled>{{ __('CLOCK OUT') }}</button>
+                                    class=" buttondanger disabled" disabled>{{ __('CLOCK OUT') }}</button>
                             @endif
                             {{ Form::close() }}
                         </div>

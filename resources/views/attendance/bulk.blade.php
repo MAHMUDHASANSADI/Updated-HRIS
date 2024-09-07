@@ -135,7 +135,7 @@
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
                                     <a href="{{ route('attendanceemployee.bulkattendance') }}"
-                                        class="btn btn-sm btn-danger" data-bs-toggle="tooltip" title=""
+                                        class=" btn-sm buttondanger" data-bs-toggle="tooltip" title=""
                                         data-bs-original-title="Reset">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                                     </a>
@@ -236,7 +236,7 @@
                     <input type="hidden" value="{{ isset($_GET['branch']) ? $_GET['branch'] : '' }}" name="branch">
                     <input type="hidden" value="{{ isset($_GET['department']) ? $_GET['department'] : '' }}"
                         name="department">
-                    {{ Form::submit(__('Update'), ['class' => 'btn btn-primary']) }}
+                    {{ Form::submit(__('Update'), ['class' => 'buttongreen text-white']) }}
                 </div>
                 {{ Form::close() }}
             </div>

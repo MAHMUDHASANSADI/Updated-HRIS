@@ -61,6 +61,7 @@
             <?php endif; ?>
         </tbody>
         <tfoot>
+         
             <tr>
                 <td>Total</td>
                 <td><?php echo e(collect($deductions)->sum('lateOrEarlyCount')); ?></td>

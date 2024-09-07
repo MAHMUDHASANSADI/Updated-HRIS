@@ -155,7 +155,7 @@
                                                                     @can('Delete Allowance')
                                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['allowance.destroy', $allowance->id], 'id' => 'delete-form-' . $allowance->id]) !!}
                                                                     <a href="#!"
-                                                                        class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                                                        class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                         title="{{ __('Delete') }}">
                                                                         <i class="ti ti-trash"></i></a>
@@ -232,7 +232,7 @@
                                                                     @can('Delete Allowance')
                                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['commission.destroy', $commission->id], 'id' => 'delete-form-' . $commission->id]) !!}
                                                                     <a href="#!"
-                                                                        class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                                                        class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                         title="{{ __('Delete') }}">
                                                                         <i class="ti ti-trash"></i></a>
@@ -344,7 +344,7 @@
                                                                     @can('Delete Loan')
                                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['loan.destroy', $loan->id], 'id' => 'delete-form-' . $loan->id]) !!}
                                                                     <a href="#!"
-                                                                        class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                                                        class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                         title="{{ __('Delete') }}">
                                                                         <i class="ti ti-trash"></i></a>
@@ -435,7 +435,7 @@
                                                                     @can('Delete Saturation Deduction')
                                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['saturationdeduction.destroy', $saturationdeduction->id], 'id' => 'delete-form-' . $saturationdeduction->id]) !!}
                                                                     <a href="#!"
-                                                                        class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                                                        class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                         title="{{ __('Delete') }}">
                                                                         <i class="ti ti-trash"></i></a>
@@ -512,7 +512,7 @@
                                                                     @can('Delete Other Payment')
                                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['otherpayment.destroy', $otherpayment->id], 'id' => 'delete-form-' . $otherpayment->id]) !!}
                                                                     <a href="#!"
-                                                                        class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                                                        class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                         title="{{ __('Delete') }}">
                                                                         <i class="ti ti-trash"></i></a>
@@ -609,7 +609,7 @@
                                                                     @can('Delete Allowance')
                                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['overtime.destroy', $overtime->id], 'id' => 'delete-form-' . $overtime->id]) !!}
                                                                     <a href="#!"
-                                                                        class="action-btn btn-danger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
+                                                                        class="action-btn buttondanger me-1 btn btn-sm d-inline-flex align-items-center show_confirm"
                                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                         title="{{ __('Delete') }}">
                                                                         <i class="ti ti-trash"></i></a>

@@ -61,7 +61,7 @@
                                         <div class="badge bg-warning mb-2">{{ __('High') }}
                                         </div>
                                     @elseif($ticket->priority == 'critical')
-                                        <div class="badge bg-danger mb-2">{{ __('Critical') }}
+                                        <div class="badge buttondanger mb-2">{{ __('Critical') }}
                                         </div>
                                     @endif
 

@@ -40,7 +40,7 @@
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
-            <button type="submit" class="btn btn-danger btn-sm mt-2">
+            <button type="submit" class="buttondanger btn-sm mt-2">
                 {{ __('Logout') }}
             </button>
         </form>

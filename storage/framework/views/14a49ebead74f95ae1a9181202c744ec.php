@@ -113,7 +113,7 @@
                                         data-original-title="<?php echo e(__('apply')); ?>">
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
-                                    <a href="<?php echo e(route('report.monthly.attendance')); ?>" class="btn btn-sm btn-danger "
+                                    <a href="<?php echo e(route('report.monthly.attendance')); ?>" class="btn-sm buttondanger "
                                         data-bs-toggle="tooltip" title="<?php echo e(__('Reset')); ?>"
                                         data-original-title="<?php echo e(__('Reset')); ?>">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -327,7 +327,7 @@
                                             <?php if($status == 'P'): ?>
                                                 <i class="badge bg-success p-2 rounded"><?php echo e(__('P')); ?></i>
                                             <?php elseif($status == 'A'): ?>
-                                                <i class="badge bg-danger p-2 rounded"><?php echo e(__('A')); ?></i>
+                                                <i class="badge buttondanger p-2 rounded"><?php echo e(__('A')); ?></i>
                                             <?php endif; ?>
                                         </td>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -339,6 +339,43 @@
             </div>
         </div>
     </div>
+
+    <!-- new code -->
+
+    <div class="col">
+    <div class="card">
+        <div class="card-body table-border-style">
+            <div class="attendance-list py-4">
+                <ul class="list-group">
+                    <!-- Column Headers -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
+                        <strong><?php echo e(__('Employee Name')); ?></strong>
+                        <strong><?php echo e(__('Date')); ?></strong>
+                        <strong><?php echo e(__('Status')); ?></strong>
+                    </li>
+
+                    <?php $__currentLoopData = $employeesAttendance; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attendance): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $attendance['status']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if(isset($dates[$index])): ?>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><?php echo e($attendance['name']); ?></span>
+                                    <span><?php echo e($dates[$index]); ?></span>
+                                    <?php if($status == 'P'): ?>
+                                        <span class="badge bg-success p-2 rounded"><?php echo e(__('Present')); ?></span>
+                                    <?php elseif($status == 'A'): ?>
+                                        <span class="badge buttondanger p-2 rounded"><?php echo e(__('Absent')); ?></span>
+                                    <?php endif; ?>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('script-page'); ?>

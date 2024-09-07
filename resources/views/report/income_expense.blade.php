@@ -131,7 +131,7 @@
                                 data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                 <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                             </a>
-                            <a href="{{ route('report.income-expense') }}" class="btn btn-sm btn-danger"
+                            <a href="{{ route('report.income-expense') }}" class="btn-sm buttondanger"
                                 data-bs-toggle="tooltip" title="" data-bs-original-title="Reset">
                                 <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                             </a>
@@ -183,7 +183,7 @@
                                         data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
-                                    <a href="{{ route('report.income-expense') }}" class="btn btn-sm btn-danger"
+                                    <a href="{{ route('report.income-expense') }}" class="btn-sm buttondanger"
                                         data-bs-toggle="tooltip" title="" data-bs-original-title="Reset">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                                     </a>

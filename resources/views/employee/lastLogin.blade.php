@@ -40,7 +40,7 @@
                                     data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                     <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                 </a>
-                                <a href="{{ route('lastlogin') }}" class="btn btn-sm btn-danger"
+                                <a href="{{ route('lastlogin') }}" class=" btn-sm buttondanger"
                                     data-bs-toggle="tooltip" title="" data-bs-original-title="Reset">
                                     <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                                 </a>
@@ -103,7 +103,7 @@
                                             </div>
 
                                             @can('Delete User')
-                                                <div class="action-btn bg-danger ms-2">
+                                                <div class="action-btn buttondanger ms-2">
                                                     {!! Form::open([
                                                         'method' => 'DELETE',
                                                         'route' => ['employee.logindestroy', $user->user_id],

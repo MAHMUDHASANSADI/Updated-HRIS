@@ -75,10 +75,10 @@
                                 <?php echo e(Form::model($employeeAttendance, ['route' => ['attendanceemployee.update', $employeeAttendance->id], 'method' => 'PUT'])); ?>
 
                                 <button type="submit" value="1" name="out" id="clock_out"
-                                    class="btn btn-danger"><?php echo e(__('CLOCK OUT')); ?></button>
+                                    class="buttondanger"><?php echo e(__('CLOCK OUT')); ?></button>
                             <?php else: ?>
                                 <button type="submit" value="1" name="out" id="clock_out"
-                                    class="btn btn-danger disabled" disabled><?php echo e(__('CLOCK OUT')); ?></button>
+                                    class=" buttondanger disabled" disabled><?php echo e(__('CLOCK OUT')); ?></button>
                             <?php endif; ?>
                             <?php echo e(Form::close()); ?>
 

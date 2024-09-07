@@ -8,43 +8,52 @@
     <li class="breadcrumb-item">{{ __('Organogram') }}</li>
 @endsection
 <body>
-    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-            <h3 class="text-center text-primary fs-3">
-            Company Hiararchy Tree
-            </h3>
-        </div>
-        <div class="tree justify-content-center d-flex shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-            <ul>
-                <li>
-                    <a href="#">CEO</a>
-                    <ul>
-                        <li>
-                            <a href="#">CTO</a>
-                            <ul>
-                                <li><a href="#">Dev Team Lead</a></li>
-                                <li><a href="#">QA Team Lead</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">CFO</a>
-                            <ul>
-                                <li><a href="#">Account Manager</a></li>
-                                <li><a href="#">Finance Analyst</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">COO</a>
-                            <ul>
-                                <li><a href="#">Operations Manager</a></li>
-                                <li><a href="#">Logistics Manager</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+<div class="container shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                <h3 class="text-center text-primary fs-3">
+                    Company Hierarchy Tree
+                </h3>
+            </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="tree justify-content-center d-flex shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="d-block text-center">CEO</a>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-block text-center">CTO</a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="d-block text-center">Dev Team Lead</a></li>
+                                    <li><a href="#" class="d-block text-center">QA Team Lead</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block text-center">CFO</a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="d-block text-center">Account Manager</a></li>
+                                    <li><a href="#" class="d-block text-center">Finance Analyst</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block text-center">COO</a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="d-block text-center">Operations Manager</a></li>
+                                    <li><a href="#" class="d-block text-center">Logistics Manager</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 @endsection
 

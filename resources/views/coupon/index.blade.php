@@ -99,7 +99,7 @@
                                                 </div>
                                             @endcan
                                             @can('delete coupon')
-                                                <div class="action-btn bg-danger ms-2">
+                                                <div class="action-btn buttondanger ms-2">
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['coupons.destroy', $coupon->id], 'id' => 'delete-form-' . $coupon->id]) !!}
                                                     <a href="#!" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"

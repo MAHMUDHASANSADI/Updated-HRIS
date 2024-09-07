@@ -60,7 +60,7 @@
 
                                             @can('Delete Role')
                                                 @if ($role->name != 'employee')
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         {!! Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['roles.destroy', $role->id],

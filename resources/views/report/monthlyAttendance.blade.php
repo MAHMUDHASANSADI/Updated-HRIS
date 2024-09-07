@@ -109,7 +109,7 @@
                                 data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                 <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                             </a>
-                            <a href="{{ route('report.monthly.attendance') }}" class="btn btn-sm btn-danger"
+                            <a href="{{ route('report.monthly.attendance') }}" class="btn btn-sm buttondanger"
                                 data-bs-toggle="tooltip" title="" data-bs-original-title="Reset">
                                 <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                             </a>
@@ -172,7 +172,7 @@
                                         data-original-title="{{ __('apply') }}">
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
-                                    <a href="{{ route('report.monthly.attendance') }}" class="btn btn-sm btn-danger "
+                                    <a href="{{ route('report.monthly.attendance') }}" class="btn-sm buttondanger "
                                         data-bs-toggle="tooltip" title="{{ __('Reset') }}"
                                         data-original-title="{{ __('Reset') }}">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -383,7 +383,7 @@
                                             @if ($status == 'P')
                                                 <i class="badge bg-success p-2 rounded">{{ __('P') }}</i>
                                             @elseif($status == 'A')
-                                                <i class="badge bg-danger p-2 rounded">{{ __('A') }}</i>
+                                                <i class="badge buttondanger p-2 rounded">{{ __('A') }}</i>
                                             @endif
                                         </td>
                                     @endforeach
@@ -395,6 +395,43 @@
             </div>
         </div>
     </div>
+
+    <!-- new code -->
+
+    <div class="col">
+    <div class="card">
+        <div class="card-body table-border-style">
+            <div class="attendance-list py-4">
+                <ul class="list-group">
+                    <!-- Column Headers -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
+                        <strong>{{ __('Employee Name') }}</strong>
+                        <strong>{{ __('Date') }}</strong>
+                        <strong>{{ __('Status') }}</strong>
+                    </li>
+
+                    @foreach ($employeesAttendance as $attendance)
+                        @foreach ($attendance['status'] as $index => $status)
+                            @if(isset($dates[$index]))
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>{{ $attendance['name'] }}</span>
+                                    <span>{{ $dates[$index] }}</span>
+                                    @if ($status == 'P')
+                                        <span class="badge bg-success p-2 rounded">{{ __('Present') }}</span>
+                                    @elseif($status == 'A')
+                                        <span class="badge buttondanger p-2 rounded">{{ __('Absent') }}</span>
+                                    @endif
+                                </li>
+                            @endif
+                        @endforeach
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
 
 @push('script-page')

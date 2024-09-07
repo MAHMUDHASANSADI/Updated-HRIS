@@ -156,7 +156,7 @@
                                 return '<div class="badge bg-success p-2 px-3 rounded"><a href="#" class="text-white">' +
                                     data + '</a></div>';
                             else
-                                return '<div class="badge bg-danger p-2 px-3 rounded"><a href="#" class="text-white">' +
+                                return '<div class="badge buttondanger p-2 px-3 rounded"><a href="#" class="text-white">' +
                                     data + '</a></div>';
                         }
 
@@ -227,7 +227,7 @@
                             console.log(data);
                             $.each(data, function(indexInArray, valueOfElement) {
                                 var status =
-                                    '<div class="badge bg-danger p-2 px-3 rounded"><a href="#" class="text-white">' +
+                                    '<div class="badge buttondanger p-2 px-3 rounded"><a href="#" class="text-white">' +
                                     valueOfElement[6] + '</a></div>';
                                 if (valueOfElement[6] == 'Paid') {
                                     var status =
@@ -273,7 +273,7 @@
                                 @if (\Auth::user()->type != 'Employee')
                                     if (valueOfElement[7] != 0) {
                                         var deleted = '<a href="#"  data-url="' + url +
-                                            '" class="payslip_delete view-btn btn btn-danger ms-1 btn-sm"  >' +
+                                            '" class="payslip_delete view-btn  buttondanger ms-1 btn-sm"  >' +
                                             '{{ __('Delete') }}' + '</a>';
                                     } else {
                                         var deleted = '';
@@ -282,7 +282,7 @@
 
                                 @if (\Auth::user()->type == 'company' || \Auth::user()->type == 'hr')
                                     var deleted = '<a href="#"  data-url="' + url +
-                                        '" class="payslip_delete view-btn btn btn-danger ms-1 btn-sm"  >' +
+                                        '" class="payslip_delete view-btn buttondanger ms-1 btn-sm"  >' +
                                         '{{ __('Delete') }}' + '</a>';
                                 @else
                                     var deleted = '';

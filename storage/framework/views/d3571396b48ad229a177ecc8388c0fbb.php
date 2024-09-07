@@ -49,7 +49,7 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn  btn-light" data-bs-dismiss="modal"><?php echo e(__('Close')); ?></button>
-    <input type="submit" value="<?php echo e(__('Create')); ?>" class="buttongreen">
+    <input type="submit" value="<?php echo e(__('Create')); ?>"  class="buttongreen text-white">
 </div>
 <?php echo e(Form::close()); ?>
 

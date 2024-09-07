@@ -74,7 +74,7 @@
                                         data-bs-toggle="tooltip" title="" data-bs-original-title="apply">
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
-                                    <a href="{{ route('holiday.index') }}" class="btn btn-sm btn-danger"
+                                    <a href="{{ route('holiday.index') }}" class="btn-sm buttondanger"
                                         data-bs-toggle="tooltip" title="" data-bs-original-title="Reset">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                                     </a>
@@ -126,7 +126,7 @@
                                                 @endcan
 
                                                 @can('Delete Holiday')
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         {!! Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['holiday.destroy', $holiday->id],

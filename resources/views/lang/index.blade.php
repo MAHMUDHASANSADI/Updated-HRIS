@@ -41,7 +41,7 @@
                     'route' => ['lang.destroy', $currantLang],
                     'id' => 'delete-form-' . $currantLang,
                 ]) !!}
-                <a href="#" class="btn btn-sm btn-danger btn-icon bs-pass-para" data-bs-toggle="tooltip"
+                <a href="#" class="btn-sm buttondanger btn-icon bs-pass-para" data-bs-toggle="tooltip"
                     title="" data-bs-original-title="Delete" aria-label="Delete"><i
                         class="ti ti-trash text-white "></i></a>
                 </form>

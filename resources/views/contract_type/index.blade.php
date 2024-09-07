@@ -53,7 +53,7 @@
                                                 </div>
                                             @endcan
                                             @can('Delete Contract Type')
-                                                <div class="action-btn bg-danger ms-2">
+                                                <div class="action-btn buttondanger ms-2">
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['contract_type.destroy', $contractType->id]]) !!}
                                                         <a href="#!" class="mx-3 btn btn-sm d-inline-flex align-items-center bs-pass-para" data-bs-toggle="tooltip" data-bs-placement="top" title="{{__('Delete')}}">
                                                            <span class="text-white"> <i class="ti ti-trash"></i></span></a>

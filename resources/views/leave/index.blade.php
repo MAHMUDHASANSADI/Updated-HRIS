@@ -12,19 +12,19 @@
 @endsection
 
 @section('action-button')
-    <a href="{{ route('leave.export') }}" class="btn btn-sm btn-primary" data-bs-toggle="tooltip"
+    <a href="{{ route('leave.export') }}" class="buttongreen" data-bs-toggle="tooltip"
         data-bs-original-title="{{ __('Export') }}">
         <i class="ti ti-file-export"></i>
     </a>
 
-    <a href="{{ route('leave.calender') }}" class="btn btn-sm btn-primary" data-bs-toggle="tooltip"
+    <a href="{{ route('leave.calender') }}" class="buttongreen" data-bs-toggle="tooltip"
         data-bs-original-title="{{ __('Calendar View') }}">
         <i class="ti ti-calendar"></i>
     </a>
 
     @can('Create Leave')
         <a href="#" data-url="{{ route('leave.create') }}" data-ajax-popup="true" data-title="{{ __('Create New Leave') }}"
-            data-size="lg" data-bs-toggle="tooltip" title="" class="btn btn-sm btn-primary"
+            data-size="lg" data-bs-toggle="tooltip" title="" class="buttongreen"
             data-bs-original-title="{{ __('Create') }}">
             <i class="ti ti-plus"></i>
         </a>
@@ -74,7 +74,7 @@
                                         @elseif($leave->status == 'Approved')
                                             <div class="badge bg-success p-2 px-3 rounded">{{ $leave->status }}</div>
                                         @elseif($leave->status == "Reject")
-                                            <div class="badge bg-danger p-2 px-3 rounded">{{ $leave->status }}</div>
+                                            <div class="badge buttondanger p-2 px-3 rounded">{{ $leave->status }}</div>
                                         @endif
                                     </td>
 
@@ -119,7 +119,7 @@
                                             @endif
 
                                             @can('Delete Leave')
-                                                <div class="action-btn bg-danger ms-2">
+                                                <div class="action-btn buttondanger ms-2">
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['leave.destroy', $leave->id], 'id' => 'delete-form-' . $leave->id]) !!}
                                                     <a href="#" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                         data-bs-toggle="tooltip" title="" data-bs-original-title="Delete"
@@ -154,7 +154,7 @@
                                                     @endcan
                                                     @can('Delete Leave')
                                                         @if (\Auth::user()->type != 'employee')
-                                                            <div class="action-btn bg-danger ms-2">
+                                                            <div class="action-btn buttondanger ms-2">
                                                                 {!! Form::open([
                                                                     'method' => 'DELETE',
                                                                     'route' => ['leave.destroy', $leave->id],

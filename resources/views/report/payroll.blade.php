@@ -213,7 +213,7 @@
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
 
-                                    <a href="{{ route('report.payroll') }}" class="btn btn-sm btn-danger "
+                                    <a href="{{ route('report.payroll') }}" class="btn-sm buttondanger"
                                         data-bs-toggle="tooltip" title="{{ __('Reset') }}"
                                         data-original-title="{{ __('Reset') }}">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -349,7 +349,7 @@
                                     <td>{{ $payslip->salary_month }}</td>
                                     <td>
                                         @if ($payslip->status == 0)
-                                            <div class="badge bg-danger p-2 px-3 rounded"><a href="#"
+                                            <div class="badge buttondanger p-2 px-3 rounded"><a href="#"
                                                     class="text-white">{{ __('UnPaid') }}</a></div>
                                         @else
                                             <div class="badge bg-success p-2 px-3 rounded"><a href="#"

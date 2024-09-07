@@ -50,7 +50,7 @@
                                         @if($job->status=='active')
                                             <span class="p-2 px-3 rounded badge bg-success">{{App\Models\Job::$status[$job->status]}}</span>
                                         @else
-                                            <span class="p-2 px-3 rounded badge bg-danger">{{App\Models\Job::$status[$job->status]}}</span>
+                                            <span class="p-2 px-3 rounded badge buttondanger">{{App\Models\Job::$status[$job->status]}}</span>
                                         @endif
                                     </td>
                                 </tr>

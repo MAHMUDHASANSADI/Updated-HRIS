@@ -56,7 +56,7 @@
                                             @endcan
 
                                             @can('Delete Designation')
-                                                <div class="action-btn bg-danger ms-2">
+                                                <div class="action-btn buttondanger ms-2">
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['designation.destroy', $designation->id], 'id' => 'delete-form-' . $designation->id]) !!}
                                                     <a href="#" class="mx-3 btn btn-sm  align-items-center bs-pass-para"
                                                         data-bs-toggle="tooltip" title="" data-bs-original-title="Delete"

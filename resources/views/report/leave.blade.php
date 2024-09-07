@@ -185,7 +185,7 @@
                                 <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                             </a>
 
-                            <a href="{{ route('report.leave') }}" class="btn btn-sm btn-danger " data-bs-toggle="tooltip"
+                            <a href="{{ route('report.leave') }}" class="btn-sm buttondanger " data-bs-toggle="tooltip"
                                 title="{{ __('Reset') }}" data-original-title="{{ __('Reset') }}">
                                 <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
                             </a>
@@ -385,7 +385,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="btn btn-sm btn-danger rounded">{{ $leave['reject'] }}
+                                        <div class="btn-sm btn btn-danger rounded">{{ $leave['reject'] }}
                                             <a href="#" class="text-white"
                                                 data-url="{{ route('report.employee.leave', [$leave['id'], 'Reject', isset($_GET['type']) ? $_GET['type'] : 'no', isset($_GET['month']) ? $_GET['month'] : date('Y-m'), isset($_GET['year']) ? $_GET['year'] : date('Y')]) }}"
                                                 class="table-action table-action-delete" data-size="lg"
