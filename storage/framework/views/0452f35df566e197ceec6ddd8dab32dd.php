@@ -2,8 +2,25 @@
 
 
 <?php $__env->startSection('content'); ?>
+<style>
+    #from{
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    #to{
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+</style>
 <form  class="shadow p-3 mb-5 bg-white rounded " action="<?php echo e(url('salary-deduction')); ?>" method="get">
-        <select name="employee_id" id="employee_id">
+        <select class="select-employee" name="employee_id" id="employee_id">
             <option value="<?php echo e(null); ?>">Choose an Employee</option>
             <?php if(isset($employees[0])): ?>
             <?php $__currentLoopData = $employees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -13,18 +30,18 @@
         </select>
                 
                     
-                <input class='date' type="date" name="from" id="from" value="<?php echo e(request()->get('from')); ?>"/>
-                        <input class='date' type="date" name="to" id="to" value="<?php echo e(request()->get('to')); ?>"/>
+                <input class='day-count' type="date" name="from" id="from" value="<?php echo e(request()->get('from')); ?>"/>
+                <input class="day-count" type="date" name="to" id="to" value="<?php echo e(request()->get('to')); ?>"/>
 
-                        <button type="submit">Calculate</button>
+                    <button class='button-calculate' type="submit">Calculate</button>
 
                 
     </form>
 
 
-    <div clasuction: s="shadow p-3 mb-5 bg-white rounded " >
-    <h4 class="font-color">Salary Deduction for Employee </h1>
-    <table class="table table-bordered">
+    <div class="shadow p-3 mb-5 bg-white rounded " >
+        <h4 class="font-color">Salary Deduction for Employee </h1>
+        <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Week</th>
@@ -51,7 +68,7 @@
                 <td><?php echo e(collect($deductions)->sum('salaryDeduction')); ?></td>
             </tr>
         </tfoot>
-    </table>
+        </table>
     </div>
     
 <?php $__env->stopSection(); ?>

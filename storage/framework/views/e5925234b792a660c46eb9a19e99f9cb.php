@@ -85,9 +85,13 @@
     <link rel="stylesheet" href="<?php echo e(asset('assets/fonts/fontawesome.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/fonts/material.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/salarydeduction.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/organogram.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/button.css')); ?>">
+
     <!-- vendor css -->
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/customizer.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/custom.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
 
     <style>
         :root {

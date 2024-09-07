@@ -165,7 +165,7 @@
                                         </div>
                                         <div class="ms-3">
                                             <small class="text-muted"><?php echo e(__('Total')); ?></small>
-                                            <h6 class="m-0"><?php echo e(__('Staff')); ?></h6>
+                                            <h6 class="m-0"><?php echo e(__('Employee')); ?></h6>
                                         </div>
                                     </div>
                                 </div>
