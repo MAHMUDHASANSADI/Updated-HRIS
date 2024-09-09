@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xxl-6">
+        {{-- <div class="col-xxl-6">
             <div class="card"style="height: 230px;">
                 <div class="card-header">
                     <h5>{{ __('Mark Attandance') }}</h5>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-xl-12 col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-header card-body table-border-style">

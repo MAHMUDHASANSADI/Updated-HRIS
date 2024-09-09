@@ -50,72 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xxl-6">
-            <div class="card"style="height: 230px;">
-                <div class="card-header">
-                    <h5><?php echo e(__('Mark Attandance')); ?></h5>
-                </div>
-                <div class="card-body">
-                    <p class="text-muted pb-0-5">
-                        <?php echo e(__('My Office Time: ' . $officeTime['startTime'] . ' to ' . $officeTime['endTime'])); ?></p>
-                    <div class="row">
-                        <div class="col-md-6 float-right border-right">
-                            <?php echo e(Form::open(['url' => 'attendanceemployee/attendance', 'method' => 'post'])); ?>
-
-                            <?php if(empty($employeeAttendance) || $employeeAttendance->clock_out != '00:00:00'): ?>
-                                <button type="submit" value="0" name="in" id="clock_in"
-                                    class="btn btn-primary"><?php echo e(__('CLOCK IN')); ?></button>
-                            <?php else: ?>
-                                <button type="submit" value="0" name="in" id="clock_in"
-                                    class="btn btn-primary disabled" disabled><?php echo e(__('CLOCK IN')); ?></button>
-                            <?php endif; ?>
-                            <?php echo e(Form::close()); ?>
-
-                        </div>
-                        <div class="col-md-6 float-left">
-                            <?php if(!empty($employeeAttendance) && $employeeAttendance->clock_out == '00:00:00'): ?>
-                                <?php echo e(Form::model($employeeAttendance, ['route' => ['attendanceemployee.update', $employeeAttendance->id], 'method' => 'PUT'])); ?>
-
-                                <button type="submit" value="1" name="out" id="clock_out"
-                                    class="btn btn-danger"><?php echo e(__('CLOCK OUT')); ?></button>
-                            <?php else: ?>
-                                <button type="submit" value="1" name="out" id="clock_out"
-                                    class="btn btn-danger disabled" disabled><?php echo e(__('CLOCK OUT')); ?></button>
-                            <?php endif; ?>
-                            <?php echo e(Form::close()); ?>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="height: 462px;">
-                <div class="card-header card-body table-border-style">
-                    <h5><?php echo e(__('Meeting schedule')); ?></h5>
-                </div>
-                <div class="card-body" style="height: 320px">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th><?php echo e(__('Meeting title')); ?></th>
-                                    <th><?php echo e(__('Meeting Date')); ?></th>
-                                    <th><?php echo e(__('Meeting Time')); ?></th>
-                                </tr>
-                            </thead>
-                            <tbody class="list">
-                                <?php $__currentLoopData = $meetings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $meeting): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <td><?php echo e($meeting->title); ?></td>
-                                        <td><?php echo e(\Auth::user()->dateFormat($meeting->date)); ?></td>
-                                        <td><?php echo e(\Auth::user()->timeFormat($meeting->time)); ?></td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="col-xl-12 col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-header card-body table-border-style">

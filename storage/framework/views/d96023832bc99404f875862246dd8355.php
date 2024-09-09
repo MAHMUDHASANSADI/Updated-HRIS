@@ -161,7 +161,7 @@
                                         <span class="btn-inner--icon"><i class="ti ti-search"></i></span>
                                     </a>
 
-                                    <a href="<?php echo e(route('attendanceemployee.index')); ?>" class="btn btn-sm btn-danger "
+                                    <a href="<?php echo e(route('attendanceemployee.index')); ?>" class=" btn-sm buttondanger "
                                         data-bs-toggle="tooltip" title="<?php echo e(__('Reset')); ?>"
                                         data-original-title="<?php echo e(__('Reset')); ?>">
                                         <span class="btn-inner--icon"><i class="ti ti-trash-off text-white-off "></i></span>
@@ -245,7 +245,7 @@
                                                 <?php endif; ?>
 
                                                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Delete Attendance')): ?>
-                                                    <div class="action-btn bg-danger ms-2">
+                                                    <div class="action-btn buttondanger ms-2">
                                                         <?php echo Form::open([
                                                             'method' => 'DELETE',
                                                             'route' => ['attendanceemployee.destroy', $attendance->id],

@@ -993,7 +993,7 @@ class AttendanceEmployeeController extends Controller
                         } else {
                             $time_sheet = AttendanceEmployee::create([
                                 'employee_id' => $employeeId,
-                                'date' => $value[1],
+                                'date' => date('Y-m-d', strtotime($value[1])),
                                 'status' => $status,
                                 'late' => $late,
                                 'early_leaving' => ($earlyLeaving > 0) ? $earlyLeaving : '00:00:00',
